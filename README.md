@@ -34,7 +34,7 @@
 * Implement a BinaryTree Constructor (__not an ES6 class__)
 * implement the following prototype methods
   * `find(value)` should iterate over all child nodes using an in-order traversal and return the first node that has that value, it should return null if a node with the value is not found
-  * `toString()` should iterate over all child nodes using a pre-order traversal and concatenate their values separated by newlines in to a string
+  * `toString(str)` should iterate over all child nodes using a pre-order traversal and concatenate their values separated by newlines in to a string
   * `.toArray(array)` should use a post-order traversal and push all the tree's elements into an array.
   
 ##### Big O
@@ -47,3 +47,4 @@
 
 #### Bonus (1 point)
 Implement the `.toArray` method with the following signature `.toArray()`
+Implement the `.toString` method with the following signature `.toString()`
