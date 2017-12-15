@@ -1,0 +1,29 @@
+{
+  "name": "lab-cameron",
+  "version": "1.0.0",
+  "description": "Trees",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest -i --coverage || exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CameronMoorehead/15-binary-trees.git"
+  },
+  "keywords": [
+    "binary",
+    "trees"
+  ],
+  "author": "Cameron Moorehead",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/CameronMoorehead/15-binary-trees/issues"
+  },
+  "homepage": "https://github.com/CameronMoorehead/15-binary-trees#readme",
+  "devDependencies": {
+    "jest": "^21.2.1"
+  }
+}
