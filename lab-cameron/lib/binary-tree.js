@@ -6,19 +6,6 @@ const BinaryTree = function(value) {
   this.right = null;
 };
 
-let one = new BinaryTree(1);
-let two = new BinaryTree(2);
-let three = new BinaryTree(3);
-let four = new BinaryTree(4);
-let five = new BinaryTree(5);
-
-one.left = two;
-one.right = three;
-
-three.left = four;
-three.right = five;
-
-
 BinaryTree.prototype.find = function(value) {
   let found = null;
 
