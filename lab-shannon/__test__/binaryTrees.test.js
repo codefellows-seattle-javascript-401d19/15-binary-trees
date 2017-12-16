@@ -24,11 +24,16 @@ describe(`binaryTree.js`, () => {
     });
   });
 
-  // describe(`toString method`, () => {
-  //   test(`The toString method should return a string of all the elements in a pre-order traversal order`, () => {
-  //     expect(one.toString('')).toEqual('1\n0\n7\n3\n10\n8');
-  //   });
-  // });
+  describe(`toString method`, () => {
+    test(`The toString method should return a string of all the elements in a pre-order traversal order`, () => {
+      expect(one.toString(' ')).toEqual(' 1\n0\n7\n3\n10\n8\n');
+    });
+    test(`The toString method should return an error if called without a string argument`, () => {
+      expect(() => {
+        three.toString()
+      }).toThrow();
+    });
+  });
 
   // describe(`toArray method`, () => {
   //   test(`The toArray method should return an array with all elements in a post-order traversal order`, () => {

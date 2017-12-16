@@ -12,8 +12,9 @@ function BinaryTree(value){
      foundElement = this.left.find(value);
    }
 
-   if(foundElement === null && this.value === value)
+   if(foundElement === null && this.value === value){
      foundElement = this;
+   }
 
    if(foundElement === null && this.right){
      foundElement = this.right.find(value);
@@ -22,15 +23,22 @@ function BinaryTree(value){
    return foundElement;
  };
 
-  // this.toString = function(str){  // pre-order traversal (root-left-right)
-  //   if(!this)
-  //     return;
-  //
-  //   str += this.value + '\n';
-  //   this.left.toString(str);
-  //   this.right.toString(str);
-  //   return str;
-  // };
+  this.toString = function(str){  // pre-order traversal (root-left-right)
+    if(!str){
+      throw new TypeError(`A string must be provided for concatenation`);
+    }
+    if(this){
+      str += this.value + `\n`;
+    }
+    if(this.left){
+      str = this.left.toString(str);
+    }
+    if(this.right){
+      str = this.right.toString(str);
+    }
+
+    return str;
+  };
 
   // this.toArray = function(array){ // post-order traversal (left-right-root)
   //   if(!this)
