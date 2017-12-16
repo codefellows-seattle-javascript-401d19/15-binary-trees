@@ -7,6 +7,10 @@ const BinaryTree = function(value) {
 };
 
 BinaryTree.prototype.find = function(value) {
+  if (typeof value !== 'number' || isNaN(value)) {
+    throw new TypeError('value must be a number');
+  }
+
   let found = null;
 
   const findRec = node => {
@@ -29,6 +33,10 @@ BinaryTree.prototype.find = function(value) {
 };
 
 BinaryTree.prototype.toString = function(str = '') {
+  if (typeof str !== 'string') {
+    throw new TypeError('str must be a string');
+  }
+
   let builtStr = str;
 
   const toStringRec = node => {
@@ -49,6 +57,10 @@ BinaryTree.prototype.toString = function(str = '') {
 };
 
 BinaryTree.prototype.toArray = function(arr = []) {
+  if (!Array.isArray(arr)) {
+    throw new TypeError('arr must be an array');
+  }
+  
   let builtArr = arr;
 
   const toArrayRec = node => {
