@@ -6,12 +6,26 @@ function BinaryTree(value){
   this.right = null;
 
   this.find = function(value){  //in-order traversal (left-root-right)
-    this.left.find(value);
+    // as long as there is a left element, go left
+    // when there are no elements to the left, see if the current value is what we want
+    // if it's not, see if there is a value to the right; does it have a left node?
+    // if it does go left as long as there are left nodes
+    // when there are no elements to the left, see if the current value is what we want
+
+    if(this.left)
+      this.left.find(value);
 
     if(this.value === value)
       return this.value;
+    else
+      return;
 
-    this.right.find(value);
+    if(this.right)
+      this.right.find(value);
+    else
+      return;
+
+    return null;
   };
   // this.toString = function(str){  // pre-order traversal (root-left-right)
   //   if(!this)
