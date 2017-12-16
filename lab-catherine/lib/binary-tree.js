@@ -18,6 +18,8 @@ three.left = four;
 three.right = five;
 
 BinaryTree.prototype.find = function (value) {
+  if(typeof value !== 'number')
+    throw new TypeError('<value> must be a number');
   let foundNode;
   let inOrderTraversal = function (root) {
     if(root === null) {
