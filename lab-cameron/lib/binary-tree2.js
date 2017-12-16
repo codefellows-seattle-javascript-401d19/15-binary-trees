@@ -8,6 +8,7 @@ const BinaryTree2 = function() {
   };
 
   let root = null;
+  let nodeCount = 0;
 
   this.insert = value => {
     const newNode = new Node(value);
@@ -20,11 +21,13 @@ const BinaryTree2 = function() {
         const item = queue.shift();
         if (item.left === null) {
           item.left = newNode;
+          nodeCount++;
           console.log(`inserted ${newNode.value}`);
           return;
         }
         if (item.right === null) {
           item.right = newNode;
+          nodeCount++;
           console.log(`inserted ${newNode.value}`);
           return;
         }
@@ -39,6 +42,7 @@ const BinaryTree2 = function() {
 
     if (!root) {
       root = newNode;
+      nodeCount++;
       console.log(`inserted ${newNode.value}`);
     } else {
       insertNode(root, newNode);
@@ -67,8 +71,8 @@ const BinaryTree2 = function() {
     return findRec(root);
   };
 
-  this.toString = (str = '') => {
-    let builtStr = str;
+  this.toString = () => {
+    let builtStr = '';
 
     const toStringRec = node => {
       builtStr += `${node.value} \n`;
@@ -87,8 +91,8 @@ const BinaryTree2 = function() {
     return toStringRec(root);
   };
 
-  this.toArray = (arr = []) => {
-    let builtArr = arr;
+  this.toArray = () => {
+    let builtArr = [];
 
     const toArrayRec = node => {
       if (node.left) {
@@ -105,6 +109,10 @@ const BinaryTree2 = function() {
     };
 
     return toArrayRec(root);
+  };
+
+  this.getNodeCount = () => {
+    return nodeCount;
   };
 };
 
