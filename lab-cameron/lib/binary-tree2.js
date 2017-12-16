@@ -108,15 +108,4 @@ const BinaryTree2 = function() {
   };
 };
 
-let test = new BinaryTree2();
-test.insert(1);
-test.insert(2);
-test.insert(3);
-test.insert(4);
-test.insert(5);
-test.insert(6);
-test.insert(7);
-
-console.log(test.toArray());
-
 module.exports = BinaryTree2;
