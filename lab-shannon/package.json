@@ -7,8 +7,13 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest -i --coverage",
+    "lint": "eslint ./"
   },
   "author": "shannon",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^4.13.1",
+    "jest": "^21.2.1"
+  }
 }
