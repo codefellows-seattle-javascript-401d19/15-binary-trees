@@ -22,6 +22,18 @@ describe('BinaryTree.js', () => {
   });
 
   describe('BinaryTree.toString(<value>)', () => {
-    // test('should return ')
+    test('should return strings found on BinaryTree organized by pre-order and separated by new lines', () => {
+      const expected = '1 \n2 \n3 \n4 \n5 \n';
+
+      expect(BTtoTest.toString('')).toEqual(expected);
+    });
+  });
+
+  describe('BinaryTree.toString()', () => {
+    test('should return strings found on BinaryTree organized by pre-order and separated by new lines', () => {
+      const expected = '1 \n2 \n3 \n4 \n5 \n';
+
+      expect(BTtoTest.toString()).toEqual(expected);
+    });
   });
 });
