@@ -27,6 +27,12 @@ describe('BinaryTree.js', () => {
 
       expect(BTtoTest.toString('')).toEqual(expected);
     });
+
+    test('should concat passed in value with values found on pre-order traversed nodes', () => {
+      const expected = 'test1 \n2 \n3 \n4 \n5 \n';
+
+      expect(BTtoTest.toString('test')).toEqual(expected);
+    });
   });
 
   describe('BinaryTree.toString()', () => {
@@ -36,4 +42,5 @@ describe('BinaryTree.js', () => {
       expect(BTtoTest.toString()).toEqual(expected);
     });
   });
+
 });
