@@ -34,19 +34,51 @@ BinaryTree.prototype.find = function(value) {
     if (node.right) {
       findRec(node.right);
     }
+
     return found;
   };
 
   return findRec(this);
 };
 
-// BinaryTree.prototype.toString = function(str = '') {
-//   // do something
-// };
-//
-// BinaryTree.prototype.toArray = function(arr = []) {
-//   // do something
-// };
-//
+BinaryTree.prototype.toString = function(str = '') {
+  let builtStr = str;
 
-console.log(one.find(4));
+  const toStringRec = node => {
+    builtStr += `${node.value} \n`;
+
+    if (node.left) {
+      toStringRec(node.left);
+    }
+
+    if (node.right) {
+      toStringRec(node.right);
+    }
+
+    return builtStr;
+  };
+
+  return toStringRec(this);
+};
+
+BinaryTree.prototype.toArray = function(arr = []) {
+  let builtArr = arr;
+
+  const toArrayRec = node => {
+    if (node.left) {
+      toArrayRec(node.left);
+    }
+
+    if (node.right) {
+      toArrayRec(node.right);
+    }
+
+    builtArr.push(node);
+
+    return builtArr;
+  };
+
+  return toArrayRec(this);
+};
+
+module.exports = BinaryTree;
