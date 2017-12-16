@@ -2,6 +2,8 @@
 
 function BinaryTree(value){
   this.value = value;
+  this.left = null;
+  this.right = null;
 
   this.find = function(value){
 
@@ -13,3 +15,5 @@ function BinaryTree(value){
 
   };
 }
+
+module.exports = BinaryTree;
