@@ -6,6 +6,9 @@ function BinaryTree(value){
   this.right = null;
 
   this.find = function(value){  //in-order traversal (left-root-right)
+    if(!value){
+      throw new Error(`You must provide a value in order to search the binary tree`);
+    }
    let foundElement = null;
 
    if(this.left){
@@ -40,14 +43,14 @@ function BinaryTree(value){
     return str;
   };
 
-  // this.toArray = function(array){ // post-order traversal (left-right-root)
-  //   if(!this)
-  //     return;
-  //
-  //   this.left.toArray(array);
-  //   this.right.toArray(array);
-  //   array.push(this);
-  // };
+  this.toArray = function(array){ // post-order traversal (left-right-root)
+    if(!this)
+      return;
+
+    this.left.toArray(array);
+    this.right.toArray(array);
+    array.push(this);
+  };
 }
 
 module.exports = BinaryTree;
