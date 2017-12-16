@@ -31,7 +31,7 @@ describe(`binaryTree.js`, () => {
     test(`The toString method should return an error if called without a string argument`, () => {
       expect(() => {
         three.toString()
-      }).toThrow();
+      }).toThrow('A string must be provided for concatenation');
     });
   });
 
