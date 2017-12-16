@@ -11,5 +11,19 @@ describe('binary-tree.js', () => {
       expect(BinaryTree.prototype.find(4)).toEqual(4);
       
     });
+
+    test('should return null if a node with the value is not found', () => {
+      
+      expect(BinaryTree.prototype.find(6)).toEqual(null);
+      expect(BinaryTree.prototype.find(9)).toEqual(null);      
+    });
   });
+
+  // describe('TOSTRING method should return the concatenated values separated by newlines in to a string', () => {
+    
+  //   test('should return the concatenated values separated by newlines in to a string', () => {
+  //     expect(BinaryTree.prototype.toString(2)).toEqual('1\n2\n3\n4\n5');
+          
+  //   });
+  // });
 });

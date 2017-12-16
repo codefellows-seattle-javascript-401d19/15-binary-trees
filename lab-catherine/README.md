@@ -9,6 +9,12 @@
 
 In this project, I built a RESTful (Hypertext Transfer Protocol) HTTP server using Express. This server handles GET, POST, PUT and DELETE requests/responses. This API uses MongoDB and Mongoose to write data to a db directory for persistence. The database is based on a "one-to-many" relationship where there are many forests and each forest has only one corresponding continent.
 
+### Big O
+
+Big O(n)
+recursive 
+Memory: relative to the height of the binary tree (the height of this binary tree is 2 (at one)) Every time you traverse you are creating a stack frame  - worst case is n
+
 ### Build
 
 #### Server Module
