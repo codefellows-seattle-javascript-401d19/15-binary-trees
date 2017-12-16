@@ -9,8 +9,8 @@ describe('binary-tree.js', () => {
     expect(BinaryTree.prototype.find(3)).toEqual(3);
     expect(BinaryTree.prototype.find(4)).toEqual(4);
   });
-  test.only('FIND method should return null if value is not found', () => {
-    expect(BinaryTree.prototype.find(6)).toEqual(undefined);
+  test('FIND method should return null if value is not found', () => {
+    expect(BinaryTree.prototype.find(6)).toEqual(null);
 
   });
   test('FIND method should throw error if value is not a number', () => {
