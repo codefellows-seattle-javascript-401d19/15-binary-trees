@@ -6,52 +6,21 @@ function BinaryTree(value){
   this.right = null;
 
   this.find = function(value){  //in-order traversal (left-root-right)
-    let leftElement = this.left;
-    let rightElement = this.right;
+   let foundElement = null;
 
-    if(leftElement === null){
-      if(this.value === value)
-        return this.value;
-      else if(rightElement !== null)
-        return this.right.find(value);
-    }else {
-      return this.left.find(value);
-    }
-    // return null;
-  };
+   if(this.left){
+     foundElement = this.left.find(value);
+   }
 
- //  this.find = function(value){  //in-order traversal (left-root-right)
- //   if(this.left){
- //     console.log(this, `from this.left`);
- //     return this.left.find(value);
- //   }
- //
- //   if(this.value === value)
- //   return this.value;
- //
- //   else if(this.right){
- //     console.log(this, `from this.right`);
- //     return this.right.find(value);
- //   }
- // };
+   if(foundElement === null && this.value === value)
+     foundElement = this;
 
-    // if(this.left){
-    //   console.log(`There is a left node`);
-    //   return this.left.find(value);
-    // }else{
-    //   console.log(`There is no left node`);
-    //   if(this.value === value)
-    //     return this;
-    // }
-    //
-    // if(this.right){
-    //   console.log(`There is a right node`);
-    //   return this.right.find(value);
-    // }else{
-    //   if(this.value === value)
-    //     return;
-    // }
+   if(foundElement === null && this.right){
+     foundElement = this.right.find(value);
+   }
 
+   return foundElement;
+ };
 
   // this.toString = function(str){  // pre-order traversal (root-left-right)
   //   if(!this)
@@ -62,6 +31,7 @@ function BinaryTree(value){
   //   this.right.toString(str);
   //   return str;
   // };
+
   // this.toArray = function(array){ // post-order traversal (left-right-root)
   //   if(!this)
   //     return;

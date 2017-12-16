@@ -17,7 +17,7 @@ describe(`binaryTree.js`, () => {
 
   describe(`Find method`, () => {
     test.only(`The .find method should return the node with the specified value if there are no errors`, () => {
-      expect(one.find(3)).toEqual(3);
+      expect(one.find(3).value).toEqual(3);
     });
     test(`The .find should return null if no node was found with the specified value`, () => {
       expect(one.find(22)).toBeNull();
