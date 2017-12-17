@@ -44,6 +44,7 @@ describe(`binaryTree.js`, () => {
   describe(`.toArray method`, () => {
     test(`The .toArray method should return an array with all elements in a post-order traversal order`, () => {
       expect(one.toArray([])).toEqual([7,0,10,8,3,1]);
+      expect(eight.toArray([1,2,3])).toEqual([1,2,3,8]);
     });
     test(`The .toArray method should return an error if called without an array argument`, () => {
       expect(() => {
