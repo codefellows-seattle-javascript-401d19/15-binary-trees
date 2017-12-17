@@ -14,5 +14,5 @@ Tree.right.addLeft(8);
 
 // console.log('FOUND OBJECT: ', Tree.find(5));
 
-console.log(Tree.toString());
+console.log(Tree.toArray());
 

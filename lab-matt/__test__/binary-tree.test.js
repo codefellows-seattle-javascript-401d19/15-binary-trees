@@ -82,4 +82,18 @@ describe('binary tree', () => {
       expect(Tree.toString()).toEqual('1\n2\n3\n4');    
     });
   });
+
+  describe('.toArray()', () => {
+    test('.toArray should return a an array of all the values', () => {
+      let Tree = new BinaryTree(1);
+      let two = new BinaryTree(2);
+      let three = new BinaryTree(3);
+      let four = new BinaryTree(4);
+      Tree.appendLeft(two);
+      Tree.appendRight(three);
+      Tree.appendLeft(four);
+
+      expect(Tree.toArray()).toEqual([4, 2, 3, 1]);    
+    });
+  });
 });

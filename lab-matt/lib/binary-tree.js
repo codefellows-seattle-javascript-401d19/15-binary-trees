@@ -77,7 +77,7 @@ BinaryTree.prototype.find = function(value) { // left-root-right
 };
 
 BinaryTree.prototype.toString = function(string) { // root-left-right
-  if (this.value) {
+  if (this) {
     if (string === undefined) string = this.value;
     else string = `${string}\n${this.value}`;
   }
@@ -93,8 +93,22 @@ BinaryTree.prototype.toString = function(string) { // root-left-right
   return string;
 };
 
-// BinaryTree.prototype.toArray = function(node) { //left-right-root
+BinaryTree.prototype.toArray = function(array) { //left-right-root
+  if (array === undefined) array = [];
+  
+  if (this.left) {
+    array = this.left.toArray(array);
+  }
+  
+  if (this.right) {
+    array = this.right.toArray(array);
+  }
 
-// };
+  if (this) {
+    array.push(this.value);
+  }
+
+  return array;
+};
 
 module.exports = BinaryTree;
