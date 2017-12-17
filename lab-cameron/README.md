@@ -41,6 +41,16 @@ Both classes feature a `find(<value>)`, `toString()` and `toArray()` methods.
 
 `toArray` traverses the tree via post-order traversal
 
+# Performance in BigO
+
+- RUNTIME: `find`, `toString`, `toArray` and `insert` are all O(n) operations
+where n is equal to the number of nodes in the tree.
+
+- SPACE: `find` is an O(1) or constant operation whereas `toString`
+and `toArray` build up a temporary variable equivalent to O(n) in memory. `insert`
+on `binary-tree2.js` is in the worst case O(h) in memory where h is equal to
+the height of the tree
+
 # Installation
 
 - Clone the repo
