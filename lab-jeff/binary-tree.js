@@ -6,65 +6,54 @@ const BinaryTree = function(value){
   this.right = null;
 
 };
-let foundNode = null;
-let foundCount = 0;
+
 BinaryTree.prototype.find = function(value) {
+  let foundNode = null;
+  let foundCount = 0;
+  const recursiveFind = (node, value) => {
 
-  // if(this === null)
-  //   return;
-
-  if(this.left !== null){
-    this.left.find(value);
-
-  }
-  if(this.value === value){
-    if(foundCount === 0){
-      foundCount++;
-      foundNode = this;
-
+    if(node.left !== null){
+      recursiveFind(node.left, value);
     }
-    return;
-  }
-  if(this.right !== null){
-    this.right.find(value);
-
-  }
+    if(node.value === value){
+      if(foundCount === 0){
+        foundCount++;
+        foundNode = node;
+      }
+    }
+    if(node.right !== null){
+      recursiveFind(node.right, value);
+    }
+  };
+  recursiveFind(this, value);
   return foundNode;
 };
 
 BinaryTree.prototype.toString = function(str) {
-
-  if(this === null)
-    return;
+  if(str === undefined) str = '';
 
   str = str + this.value + '\n';
+
   if(this.left !== null)
-    this.left.toString(str);
+    str = this.left.toString(str);
+
   if(this.right !== null)
-    this.right.toString(str);
+    str = this.right.toString(str);
 
-
+  return str;
 };
 
+BinaryTree.prototype.toArray = function(array) {
+  if(array === undefined) array = [];
+
+  if(this.left !== null)
+    array = this.left.toArray(array);
+
+  if(this.right !== null)
+    array = this.right.toArray(array);
+
+  array.push(this.value);
+  return array;
+};
 
 module.exports = BinaryTree;
-
-
-
-
-// let preOrderTraversal = (root) => {
-//
-//   if(root === null)
-//     return;
-//
-//   console.log(`Visiting ${root.value}`);
-//   preOrderTraversal(root.left);
-//   preOrderTraversal(root.right);
-// };
-//
-// let inOrderTraversal = (root) => {
-//
-//   if(root === null)
-//     return;
-//
-// }
