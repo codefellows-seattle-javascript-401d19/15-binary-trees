@@ -19,4 +19,14 @@ describe('Traversal Testing', () => {
     console.log(pre);
   });
 
+  test('pre order travesal test', () => {
+    let post = traverse.postOrderTraversal(one);
+    console.log(post);
+  });
+
+  test.only('in order', () => {
+    let inOrder = traverse.inOrderTraversal(one, 3);
+    console.log(inOrder);
+  });
+
 });
