@@ -42,5 +42,10 @@ describe('binary-tree.js', () => {
       expect(BinaryTree.prototype.toArray()).toEqual([2, 4, 5, 3, 1]);
           
     });
+
+    test('should not be null', () => {
+      expect(BinaryTree.prototype.toArray()).not.toBeNull();
+          
+    });
   });
 });

@@ -61,9 +61,6 @@ BinaryTree.prototype.find = function (value) {
 // BinaryTree.prototype.toString();
 
 
-
-// .toArray(array) should use a post-order traversal and push all the tree's elements into an array.
-
 BinaryTree.prototype.toArray = function () {
 
   let newArray = [];
@@ -75,17 +72,16 @@ BinaryTree.prototype.toArray = function () {
     }
     postOrderTraversal(root.left);
     postOrderTraversal(root.right);
-    console.log(`Visiting ${root.value}`);
+    // console.log(`Visiting ${root.value}`);
     newArray.push(root.value);
   };
     
   postOrderTraversal(one);
-  console.log('new array', newArray);
+  // console.log('new array', newArray);
   return newArray;
     
   
 };
-
 
 
 module.exports = BinaryTree;
