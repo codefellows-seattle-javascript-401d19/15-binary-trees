@@ -49,7 +49,7 @@ describe('/lib/binary-tree', () => {
       postOrderStringTree.appendToHook(4, 5);
       postOrderStringTree.appendToHook(3, 4);
 
-      expect(postOrderStringTree.preOrderToString()).toEqual('10 9 8 7 5 4 3 6');
+      expect(postOrderStringTree.postOrderToArray()).toEqual([10, 9, 8, 7, 5, 4, 3, 6]);
     });
   });
 });
