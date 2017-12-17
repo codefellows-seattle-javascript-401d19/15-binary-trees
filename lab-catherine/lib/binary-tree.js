@@ -61,9 +61,6 @@ BinaryTree.prototype.toString = function () {
   
 };
 
-BinaryTree.prototype.toString();
-
-
 BinaryTree.prototype.toArray = function () {
 
   let newArray = [];
