@@ -44,35 +44,48 @@ BinaryTree.prototype.find = function (value) {
 
 // BinaryTree.prototype.toString = function (str) {
   
-// let preOrderTraversal = (root) => {
+//   let preOrderTraversal = (root) => {
     
-//   if(root === null) {
-//     return;
-//   }
-//   console.log(`Visiting ${root.value}\n`);
-//   preOrderTraversal(root.left);
-//   preOrderTraversal(root.right);
-// };
+//     if(root === null) {
+//       return;
+//     }
+//     console.log(`Visiting ${root.value}\n`);
+//     preOrderTraversal(root.left);
+//     preOrderTraversal(root.right);
+//   };
   
-// preOrderTraversal(one);
+//   preOrderTraversal(one);
   
 // };
 
 // BinaryTree.prototype.toString();
 
-module.exports = BinaryTree;
 
 
 // .toArray(array) should use a post-order traversal and push all the tree's elements into an array.
 
-// let postOrderTraversal = (root) => {
+BinaryTree.prototype.toArray = function () {
 
-//   if(root === null) {
-//     return;
-//   }
-//   postOrderTraversal(root.left);
-//   postOrderTraversal(root.right);
-//   console.log(`Visiting ${root.value}`);
-// };
+  let newArray = [];
 
-// postOrderTraversal(one);
+  let postOrderTraversal = function (root) {
+  
+    if(root === null) {
+      return;
+    }
+    postOrderTraversal(root.left);
+    postOrderTraversal(root.right);
+    console.log(`Visiting ${root.value}`);
+    newArray.push(root.value);
+  };
+    
+  postOrderTraversal(one);
+  console.log('new array', newArray);
+  return newArray;
+    
+  
+};
+
+
+
+module.exports = BinaryTree;

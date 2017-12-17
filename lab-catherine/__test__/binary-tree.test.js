@@ -35,4 +35,12 @@ describe('binary-tree.js', () => {
           
   //   });
   // });
+
+  describe('TOARRAY method should function properly', () => {
+    
+    test('should return an array with all of the elements in the binary tree', () => {
+      expect(BinaryTree.prototype.toArray()).toEqual([2, 4, 5, 3, 1]);
+          
+    });
+  });
 });
