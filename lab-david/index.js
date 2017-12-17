@@ -7,11 +7,6 @@ const binaryTree = function(value, left, right) {
   this.right = right;
 
   //methods on the constructor
-
-  Shape.prototype.setLocation = function(x, y) {
-    this.x = x;
-    this.y = y;
-
   // iterate over all child nodes using an in-order traversal and return first node with the value, return null if not found
   binaryTree.prototype.find = function(root) {
 
@@ -72,3 +67,5 @@ two.left = four;
 two.right = five;
 
 three.right = six;
+
+const index = module.exports = {};
