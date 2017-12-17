@@ -43,27 +43,18 @@ BinaryTree.prototype.toString = function(str = '') {
 };
 
 BinaryTree.prototype.toArray = function(array = []) {
+  if(!Array.isArray(array))
+    throw new TypeError('argument <array> must be of type array.');
 
+  if(this.left)
+    array = this.left.toArray(array);
+  
+  if(this.right)
+    array = this.right.toArray(array);
+  
+  array.push(this.value);
+
+  return array;
 };
 
 module.exports = BinaryTree;
-
-
-// let one, two, three, four, five, six, duplicateThree;
-
-// one = new BinaryTree(2);
-// two = new BinaryTree(2);
-// three = new BinaryTree(3);
-// four = new BinaryTree(3);
-// five = new BinaryTree(2);
-// six = new BinaryTree(3);
-// duplicateThree = new BinaryTree(3);
-
-// one.left = two;
-// one.right = three;
-// three.left = four;
-// three.right = five;
-// four.left = six;
-// five.right = duplicateThree;
-
-// console.log(five.find(3) === duplicateThree);
