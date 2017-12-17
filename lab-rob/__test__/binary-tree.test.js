@@ -1,7 +1,9 @@
 'use strict';
 
 const BinaryTree = require('../lib/binary-tree');
+
 let one, two, three, four, five, six, duplicateThree;
+
 const setup = () => {
   one = new BinaryTree(1);
   two = new BinaryTree(2);
@@ -39,7 +41,7 @@ describe('binary-tree.js', () => {
         expect(four.find(6)).toEqual(six);
       });
 
-      test('find should return the calling node if the calling node has the desired value', () => {
+      test('find should return the calling node if the calling node is unique and has the desired value', () => {
         expect(one.find(1)).toEqual(one);
         expect(six.find(6)).toEqual(six);
       });
@@ -48,17 +50,20 @@ describe('binary-tree.js', () => {
         expect(one.find(3)).toEqual(three);
         expect(three.find(3)).toEqual(three);
         expect(five.find(3)).toEqual(duplicateThree);
+
+        let leftDup = new BinaryTree(3);
+        five.left = leftDup;
+
+        expect(five.find(3)).toEqual(leftDup);
       });
 
       test('find should return null if no node has the requested value', () => {
         expect(one.find('nope')).toBeNull();
         expect(three.find('nope')).toBeNull();
       });
-
-
     });
 
-    describe.only('toString(str)', () => {
+    describe('toString(str)', () => {
       test('toString should return a concatenated string of all values using a pre-order traversal if an empty string is provided', () => {
         expect(one.toString('')).toEqual('1\n2\n3\n4\n6\n5\n3');
         expect(four.toString('')).toEqual('4\n6');
@@ -82,10 +87,11 @@ describe('binary-tree.js', () => {
           one.toString(9);
         }).toThrow();
       });
-
-
     });
 
+    // describe('toArray(array)', () => {
+
+    // });
     
   });
 

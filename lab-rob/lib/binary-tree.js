@@ -7,20 +7,21 @@ const BinaryTree = function(value) {
 };
 
 BinaryTree.prototype.find = function(value) {
-  if(this.left) {
-    this.left.find(value);
-  }
+  let foundNode = null;
 
-  if(this.value === value) {
-    console.log('found', this.value);
-    return this;
-  } else {
-    console.log('visited', this.value);
-  }
+  const traverseAndFind = node => {
+    if(node.left && !foundNode)
+      traverseAndFind(node.left);
 
-  if(this.right) {
-    this.right.find(value);
-  }
+    if(node.value === value && !foundNode) 
+      return foundNode = node;
+
+    if(node.right && !foundNode)
+      traverseAndFind(node.right);
+  };
+
+  traverseAndFind(this);
+  return foundNode;
 };
 
 BinaryTree.prototype.toString = function(str = '') {
@@ -41,17 +42,21 @@ BinaryTree.prototype.toString = function(str = '') {
   return str;
 };
 
+BinaryTree.prototype.toArray = function(array = []) {
+
+};
+
 module.exports = BinaryTree;
 
 
 // let one, two, three, four, five, six, duplicateThree;
 
-// one = new BinaryTree(1);
+// one = new BinaryTree(2);
 // two = new BinaryTree(2);
 // three = new BinaryTree(3);
-// four = new BinaryTree(4);
-// five = new BinaryTree(5);
-// six = new BinaryTree(6);
+// four = new BinaryTree(3);
+// five = new BinaryTree(2);
+// six = new BinaryTree(3);
 // duplicateThree = new BinaryTree(3);
 
 // one.left = two;
@@ -61,4 +66,4 @@ module.exports = BinaryTree;
 // four.left = six;
 // five.right = duplicateThree;
 
-// console.log(one.toString(''));
+// console.log(five.find(3) === duplicateThree);
