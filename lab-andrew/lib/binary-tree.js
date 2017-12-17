@@ -6,17 +6,6 @@ const BinaryTree = function(value){
   this.right = null;
 };
 
-BinaryTree.preOrderTraversal = root => {
-
-  if (root === null){
-    return;
-  }
-
-  console.log(root.value);
-  BinaryTree.preOrderTraversal(root.left);
-  BinaryTree.preOrderTraversal(root.right);
-};
-
 BinaryTree.prototype.findInOrder = function(value){
 
   if (this.left){
@@ -56,15 +45,22 @@ BinaryTree.prototype.preOrderToString = function (string) {
   return string;
 };
 
-BinaryTree.postOrderTraversal = root => {
-
-  if (root === null){
-    return;
+BinaryTree.prototype.postOrderToArray = function (array) {
+  if (!array) {
+    array = [];
   }
 
-  BinaryTree.postOrderTraversal(root.left);
-  BinaryTree.postOrderTraversal(root.right);
-  console.log(root.value);
+  if (this.left) {
+    array.concat(this.left.postOrderToArray(array));
+  }
+
+  if (this.right) {
+    array.concat(this.right.postOrderToArray(array));
+  }
+
+  array.push(this.value);
+  
+  return array;
 };
 
 module.exports = BinaryTree;

@@ -34,4 +34,13 @@ describe('lib/binary-tree.js', () => {
     expect(six.preOrderToString()).toEqual('6');
   });
 
+  test('binary tree post order array, normal cases', () => {
+    expect(one.postOrderToArray()).toEqual([2, 5, 6, 4, 3, 1]);
+    expect(four.postOrderToArray()).toEqual([5, 6, 4]);
+  });
+
+  test('binary tree post order array, edge cases', () => {
+    expect(three.postOrderToArray()).toEqual([5, 6, 4, 3]);
+    expect(six.postOrderToArray()).toEqual([6]);
+  });
 });
