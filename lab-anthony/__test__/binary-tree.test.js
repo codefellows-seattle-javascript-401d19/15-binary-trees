@@ -46,6 +46,4 @@ describe('Traversal Testing', () => {
       expect(inOrder).toEqual(null);
     });
   });
-
-
 });
