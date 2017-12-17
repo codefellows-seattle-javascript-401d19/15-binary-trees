@@ -39,26 +39,29 @@ BinaryTree.prototype.find = function (value) {
 };
 
 
-// toString(str) should iterate over all child nodes using a pre-order traversal and concatenate their values separated by newlines in to a string
-// "1\n2\n3\n"...
+BinaryTree.prototype.toString = function () {
 
-// BinaryTree.prototype.toString = function (str) {
+  let str = '';
   
-//   let preOrderTraversal = (root) => {
+  let preOrderTraversal = (root) => {
     
-//     if(root === null) {
-//       return;
-//     }
-//     console.log(`Visiting ${root.value}\n`);
-//     preOrderTraversal(root.left);
-//     preOrderTraversal(root.right);
-//   };
+    if(root === null) {
+      return;
+    }
   
-//   preOrderTraversal(one);
-  
-// };
+    str = str.concat(root.value.toString() + '\n');
 
-// BinaryTree.prototype.toString();
+    preOrderTraversal(root.left);
+    preOrderTraversal(root.right);
+  };
+  
+  preOrderTraversal(one);
+  
+  return str;
+  
+};
+
+BinaryTree.prototype.toString();
 
 
 BinaryTree.prototype.toArray = function () {
@@ -72,14 +75,11 @@ BinaryTree.prototype.toArray = function () {
     }
     postOrderTraversal(root.left);
     postOrderTraversal(root.right);
-    // console.log(`Visiting ${root.value}`);
     newArray.push(root.value);
   };
     
   postOrderTraversal(one);
-  // console.log('new array', newArray);
   return newArray;
-    
   
 };
 

@@ -28,13 +28,13 @@ describe('binary-tree.js', () => {
     });
   });
 
-  // describe('TOSTRING method should return the concatenated values separated by newlines in to a string', () => {
+  describe('TOSTRING method should return the concatenated values separated by newlines in to a string', () => {
     
-  //   test('should return the concatenated values separated by newlines in to a string', () => {
-  //     expect(BinaryTree.prototype.toString(2)).toEqual('1\n2\n3\n4\n5');
+    test('should return the concatenated values separated by newlines in to a string', () => {
+      expect(BinaryTree.prototype.toString()).toEqual('1\n2\n3\n4\n5\n');
           
-  //   });
-  // });
+    });
+  });
 
   describe('TOARRAY method should function properly', () => {
     
