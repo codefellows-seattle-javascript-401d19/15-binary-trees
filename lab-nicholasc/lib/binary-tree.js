@@ -1,63 +1,64 @@
 'use strict';
 
+
 function BinaryTree(value){
   this.value = value;
   this.left = null;
   this.right = null;
 }
 
-BinaryTree.appendToHook = (value, root, hookValue) => {
-  if(root === null)
+BinaryTree.prototype.appendToHook = (value, hookValue) => {
+  if(this === null)
     return;
-  if(root.value === hookValue){
-    if(root.left)
-      return root.right = new BinaryTree(value);
-    return root.left = new BinaryTree(value);
+  if(this.value === hookValue){
+    if(this.left)
+      return this.right = new BinaryTree(value);
+    return this.left = new BinaryTree(value);
   }
 
-  BinaryTree.appendToHook(value, root.left, hookValue);
-  BinaryTree.appendToHook(value, root.right, hookValue);
+  this.left.appendToHook(value, hookValue);
+  this.right.appendToHook(value, hookValue);
 };
 
-BinaryTree.append = (value, root) => {
-  if(!root.left)
-    return root.left = new BinaryTree(value);
-  if(!root.right)
-    return root.right = new BinaryTree(value);
+BinaryTree.prototype.append = (value) => {
+  if(!this.left)
+    return this.left = new BinaryTree(value);
+  if(!this.right)
+    return this.right = new BinaryTree(value);
   if(Math.floor(Math.random()*2) === 1)
-    return BinaryTree.append(value, root.left);
-  return BinaryTree.append(value, root.right);
+    return BinaryTree.append(value, this.left);
+  return BinaryTree.append(value, this.right);
 };
 
-BinaryTree.inOrderFind = (root, value) => {
-  if(root === null)
+BinaryTree.prototype.inOrderFind = (value) => {
+  if(this === null)
     return;
-  BinaryTree.inOrderFind(root.left, value);
-  if(root.value === value) {
-    console.log(root);
-    return root;
+  this.left.inOrderFind(value);
+  if(this.value === value) {
+    console.log(this);
+    return this;
   }
-  BinaryTree.inOrderFind(root.right, value);
+  this.right.inOrderFind(value);
 };
 
-BinaryTree.preOrderToString = () => {
+BinaryTree.prototype.preOrderToString = () => {
 
 };
 
-BinaryTree.postOrderToArray = () => {
+BinaryTree.prototype.postOrderToArray = () => {
 
 };
 
 let appendRooter = new BinaryTree(70);
-BinaryTree.append(9, appendRooter);
-BinaryTree.append(8, appendRooter);
-BinaryTree.append(7, appendRooter);
-BinaryTree.append(6, appendRooter);
-BinaryTree.append(5, appendRooter);
-BinaryTree.append(4, appendRooter);
-BinaryTree.append(3, appendRooter);
-BinaryTree.append(2, appendRooter);
-BinaryTree.append(1, appendRooter);
+appendRooter.append(9);
+appendRooter.append(8);
+appendRooter.append(7);
+appendRooter.append(6);
+appendRooter.append(5);
+appendRooter.append(4);
+appendRooter.append(3);
+appendRooter.append(2);
+appendRooter.append(1);
 
 
 let appendToHookRooter = new BinaryTree(70);
@@ -110,3 +111,6 @@ let inOrderTraversal = (root) => {
   console.log(root);
   inOrderTraversal(root.right);
 };
+
+
+module.exports = BinaryTree;
