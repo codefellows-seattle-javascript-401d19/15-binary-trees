@@ -1,11 +1,9 @@
 'use strict';
 
-class BinaryTree{
-  constructor(value){
-    this.value = value;
-    this.left = null;
-    this.right = null;
-  }
+function BinaryTree(value){
+  this.value = value;
+  this.left = null;
+  this.right = null;
 }
 
 BinaryTree.appendToHook = (value, root, hookValue) => {
@@ -20,6 +18,7 @@ BinaryTree.appendToHook = (value, root, hookValue) => {
   BinaryTree.appendToHook(value, root.left, hookValue);
   BinaryTree.appendToHook(value, root.right, hookValue);
 };
+
 BinaryTree.append = (value, root) => {
   if(!root.left)
     return root.left = new BinaryTree(value);
@@ -28,6 +27,25 @@ BinaryTree.append = (value, root) => {
   if(Math.floor(Math.random()*2) === 1)
     return BinaryTree.append(value, root.left);
   return BinaryTree.append(value, root.right);
+};
+
+BinaryTree.inOrderFind = (root, value) => {
+  if(root === null)
+    return;
+  BinaryTree.inOrderFind(root.left, value);
+  if(root.value === value) {
+    console.log(root);
+    return root;
+  }
+  BinaryTree.inOrderFind(root.right, value);
+};
+
+BinaryTree.preOrderToString = () => {
+
+};
+
+BinaryTree.postOrderToArray = () => {
+
 };
 
 let appendRooter = new BinaryTree(70);
