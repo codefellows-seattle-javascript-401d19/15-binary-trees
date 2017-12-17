@@ -38,7 +38,7 @@ const binaryTree = function(value, left, right) {
   // should use post-order traversal push all tree elements into an array
   binaryTree.prototype.toArray = function(root) {
 
-    newArray = [];
+    let newArray = [];
 
     toArray(root.left);
     toArray(root.right);
@@ -46,6 +46,7 @@ const binaryTree = function(value, left, right) {
 
     newArray.push(value);
 
+    return newArray;
 
   };  
 };
