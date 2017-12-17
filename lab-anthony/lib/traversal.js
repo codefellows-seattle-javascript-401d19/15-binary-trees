@@ -4,7 +4,6 @@
 let preOrderTraversal = (root) => {
 
   let preOrderString = '';
-  console.log(root.value);
   if (root === null)
     return;
 
@@ -14,7 +13,6 @@ let preOrderTraversal = (root) => {
     preOrderString += preOrderTraversal(root.left);
   if (root.right)
     preOrderString += preOrderTraversal(root.right);
-  console.log(preOrderString);
   return preOrderString;
 };
 
@@ -37,7 +35,6 @@ let postOrderTraversal = (root) => {
 
 let inOrderTraversal = (root, value) => {
   let foundValue = null;
-  console.log(root, value);
   if (root.left) {
     foundValue = inOrderTraversal(root.left, value);
     if(foundValue)
