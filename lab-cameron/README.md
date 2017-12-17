@@ -70,11 +70,11 @@ All testing done with `jest`
 
 This will create a Binary Tree that looks like this:
 
-  1
- / \
-2   3
-   / \
-  4   5
+      1
+     / \
+    2   3
+       / \
+      4   5
 
 3. Perform `find`, `toString` or `toArray` operations on your root node
 
@@ -105,11 +105,11 @@ NOTE: Insert maintains a balanced tree via level-order traversal and insert
 
 This will create a Binary Tree that looks like this:
 
-    1
-   / \
-  2   3
- / \ / \
-4  5 6  7
+        1
+       / \
+      2   3
+     / \ / \
+    4  5 6  7
 
 3. Perform `find`, `toString`, or `toArray` operations on ExampleTree
 
