@@ -27,7 +27,7 @@ function BinaryTree(value){
  };
 
   this.toString = function(str){  // pre-order traversal (root-left-right)
-    if(!str){
+    if(typeof str !== 'string'){
       throw new TypeError(`A string must be provided for concatenation`);
     }
     if(this){
