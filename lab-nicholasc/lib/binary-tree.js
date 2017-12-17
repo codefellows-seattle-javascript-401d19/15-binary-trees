@@ -33,62 +33,33 @@ BinaryTree.prototype.append = function(value){
 };
 
 BinaryTree.prototype.inOrderFind = function(value){
-  if(this === null)
-    return;
-  this.left.inOrderFind(value);
-  if(this.value === value) {
-    console.log(this);
-    return this;
+  let found = null;
+  if(this.left)
+    found = this.left.inOrderFind(value);
+  if(this.value === value && found === null) {
+    found = this;
   }
-  this.right.inOrderFind(value);
+  if(this.right && found === null)
+    found = this.right.inOrderFind(value);
+  return found;
 };
 
-BinaryTree.prototype.preOrderToString = () => {
+BinaryTree.prototype.preOrderToString = (string) => {
+  if(!string)
+    string = this.value;
+  else(string = `${string} ${this.value}`);
 
+  if(this.left)
+    string = this.left.preOrderToString(string);
+  if(this.right)
+    string = this.right.preOrderToString(string);
+  return string;
 };
 
 BinaryTree.prototype.postOrderToArray = () => {
 
 };
 
-// let appendRooter = new BinaryTree(70);
-// appendRooter.append(9);
-// appendRooter.append(8);
-// appendRooter.append(7);
-// appendRooter.append(6);
-// appendRooter.append(5);
-// appendRooter.append(4);
-// appendRooter.append(3);
-// appendRooter.append(2);
-// appendRooter.append(1);
-//
-//
-// let appendToHookRooter = new BinaryTree(70);
-// appendToHookRooter.appendToHook(9, 70);
-// appendToHookRooter.appendToHook(8, 9);
-// appendToHookRooter.appendToHook(7, 8);
-// appendToHookRooter.appendToHook(6, 9);
-// appendToHookRooter.appendToHook(5, 8);
-// appendToHookRooter.appendToHook(4, 5);
-// appendToHookRooter.appendToHook(3, 4);
-//
-//
-// let one = new BinaryTree(1);
-// let two = new BinaryTree(2);
-// let three = new BinaryTree(3);
-// let four = new BinaryTree(4);
-// let five = new BinaryTree(5);
-// let six = new BinaryTree(6);
-// let seven = new BinaryTree(7);
-//
-// one.left = two;
-// one.right = three;
-//
-// three.left = four;
-// three.right = five;
-//
-// five.left = six;
-// five.right = seven;
 
 let preOrderTraversal = (root) => {
   if(root === null)
