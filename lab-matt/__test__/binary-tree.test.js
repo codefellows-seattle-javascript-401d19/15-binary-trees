@@ -84,7 +84,6 @@ describe('binary tree', () => {
       Tree.appendRight(three);
       Tree.appendRight(four);
       Tree.appendLeft(five);      
-      
 
       expect(Tree.toString()).toEqual('1\n5\n2\n3\n4');    
     });
