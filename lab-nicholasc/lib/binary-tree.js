@@ -8,18 +8,22 @@ function BinaryTree(value){
 }
 
 BinaryTree.prototype.appendToHook = function(value, hookValue){
-  if(this === null)
+  console.log(this);
+
+  if(this === null){
     return;
+  }
+
   if(this.value === hookValue){
-    console.log(this.left);
-    console.log(this.right);
     if(this.left)
       return this.right = new BinaryTree(value);
     return this.left = new BinaryTree(value);
   }
 
-  this.left.appendToHook(value, hookValue);
-  this.right.appendToHook(value, hookValue);
+  if(this.left)
+    this.left.appendToHook(value, hookValue);
+  if(this.right)
+    this.right.appendToHook(value, hookValue);
 };
 
 BinaryTree.prototype.append = function(value){
@@ -44,11 +48,13 @@ BinaryTree.prototype.inOrderFind = function(value){
   return found;
 };
 
-BinaryTree.prototype.preOrderToString = (string) => {
-  if(!string)
+BinaryTree.prototype.preOrderToString = function(string){
+  if(string === undefined){
     string = this.value;
-  else(string = `${string} ${this.value}`);
-
+  }
+  else{
+    string = `${string} ${this.value}`;
+  }
   if(this.left)
     string = this.left.preOrderToString(string);
   if(this.right)
@@ -56,8 +62,18 @@ BinaryTree.prototype.preOrderToString = (string) => {
   return string;
 };
 
-BinaryTree.prototype.postOrderToArray = () => {
+BinaryTree.prototype.postOrderToArray = (arr) => {
+  if(arr === undefined){
+    arr = [this.value];
+  }
+  if(this.left)
+    arr = this.left.postOrderToArray(arr);
+  if(this.right)
+    arr = this.right.postOrderToArray(arr);
 
+  arr.push(this.value);
+
+  return arr;
 };
 
 
