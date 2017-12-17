@@ -2,10 +2,17 @@
 
 const bt = require('./lib/binary-tree');
 
-let myTree = new bt(10);
+let Tree = new bt(1);
+Tree.appendLeft(2);
+Tree.appendLeft(new bt(3));
+Tree.appendLeft(4);
+Tree.addRight(5);
+Tree.right.addRight(7);
+Tree.right.addLeft(8);
 
-console.log(myTree);
+// console.log(Tree);
 
-myTree.addLeft(new String(34));
+// console.log('FOUND OBJECT: ', Tree.find(5));
 
-console.log(new String(34));
+console.log(Tree.toString());
+

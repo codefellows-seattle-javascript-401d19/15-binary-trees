@@ -60,26 +60,41 @@ BinaryTree.prototype.appendRight = function(value) {
 
 // ============== FIND VALUE ==============
 BinaryTree.prototype.find = function(value) { // left-root-right
+  let matchingElement = null;
   
-  this.left.find(value);
+  if (this.left) {
+    matchingElement = this.left.find(value);
+  }
   
-  if (this.left === value) {
-    return this.left;
+  if (this.value === value && matchingElement === null) {
+    matchingElement = this;
   }
-  if (this.right === value) {
-    return this.right;
+  
+  if (this.right && matchingElement === null) {
+    matchingElement = this.right.find(value);
+  }
+  return matchingElement;
+};
+
+BinaryTree.prototype.toString = function(string) { // root-left-right
+  if (this.value) {
+    if (string === undefined) string = this.value;
+    else string = `${string}\n${this.value}`;
   }
 
+  if (this.left) {
+    string = this.left.toString(string);
+  }
+  
+  if (this.right) {
+    string = this.right.toString(string);
+  }
 
-  return 'value';
+  return string;
 };
 
-BinaryTree.prototype.toString = function(node) {
+// BinaryTree.prototype.toArray = function(node) { //left-right-root
 
-};
-
-BinaryTree.prototype.toArray = function(node) {
-
-};
+// };
 
 module.exports = BinaryTree;
