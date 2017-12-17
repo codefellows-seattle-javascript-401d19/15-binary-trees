@@ -58,14 +58,18 @@ describe('binary tree', () => {
       let two = new BinaryTree(2);
       let three = new BinaryTree(3);
       let four = new BinaryTree(4);
+      let five = new BinaryTree(5);
+      
       Tree.appendRight(two);
       Tree.appendRight(three);
       Tree.appendRight(four);
+      Tree.appendLeft(five);      
 
       expect(Tree.find(1)).toEqual(Tree);
       expect(Tree.find(2)).toEqual(two);
       expect(Tree.find(3)).toEqual(three);
       expect(Tree.find(4)).toEqual(four);      
+      expect(Tree.find(5)).toEqual(five);      
     });
   });
 
@@ -75,11 +79,14 @@ describe('binary tree', () => {
       let two = new BinaryTree(2);
       let three = new BinaryTree(3);
       let four = new BinaryTree(4);
+      let five = new BinaryTree(5);
       Tree.appendRight(two);
       Tree.appendRight(three);
       Tree.appendRight(four);
+      Tree.appendLeft(five);      
+      
 
-      expect(Tree.toString()).toEqual('1\n2\n3\n4');    
+      expect(Tree.toString()).toEqual('1\n5\n2\n3\n4');    
     });
   });
 
@@ -94,6 +101,22 @@ describe('binary tree', () => {
       Tree.appendLeft(four);
 
       expect(Tree.toArray()).toEqual([4, 2, 3, 1]);    
+    });
+  });
+
+  describe('TESTING ERRORS', () => {
+    test('.addLeft/Right should return an error if trying to add another immediate left or right value', () => {
+      let Tree = new BinaryTree(1);
+      Tree.addLeft(2);
+      Tree.addRight(3);
+
+      expect(() => {
+        Tree.addLeft(10);    
+      }).toThrow();
+
+      expect(() => {
+        Tree.addRight(10);    
+      }).toThrow();
     });
   });
 });

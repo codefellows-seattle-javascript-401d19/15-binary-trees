@@ -18,8 +18,8 @@ BinaryTree.prototype.addLeft = function(value) {
     throw new Error('left node already exists for this tree');
   }
 
-  this.left = value;
-  return;
+  
+  return this.left = value;
 };
 
 BinaryTree.prototype.addRight = function(value) {
@@ -31,8 +31,7 @@ BinaryTree.prototype.addRight = function(value) {
     throw new Error('right node already exists for this tree');
   }
 
-  this.right = value;
-  return;
+  return this.right = value;
 };
 
 // ============== ADD NEW LEAF'S ==============
@@ -40,22 +39,24 @@ BinaryTree.prototype.appendLeft = function(value) {
   if (!(value instanceof BinaryTree) && value !== null) {
     value = new BinaryTree(value);
   }
+
   if (!this.left) {
     return this.left = value;
   }
-  this.left.appendLeft(value);
-  return;
+
+  return this.left.appendLeft(value);
 };
 
 BinaryTree.prototype.appendRight = function(value) {
   if (!(value instanceof BinaryTree) && value !== null) {
     value = new BinaryTree(value);
   }
+
   if (!this.right) {
     return this.right = value;
   }
-  this.right.appendRight(value);
-  return;
+
+  return this.right.appendRight(value);
 };
 
 // ============== FIND VALUE ==============
@@ -73,14 +74,14 @@ BinaryTree.prototype.find = function(value) { // left-root-right
   if (this.right && matchingElement === null) {
     matchingElement = this.right.find(value);
   }
+
   return matchingElement;
 };
 
+// ============== TO STRING ==============
 BinaryTree.prototype.toString = function(string) { // root-left-right
-  if (this) {
-    if (string === undefined) string = this.value;
-    else string = `${string}\n${this.value}`;
-  }
+  if (string === undefined) string = this.value;
+  else string = `${string}\n${this.value}`;
 
   if (this.left) {
     string = this.left.toString(string);
@@ -93,20 +94,19 @@ BinaryTree.prototype.toString = function(string) { // root-left-right
   return string;
 };
 
+// ============== TO ARRAY ==============
 BinaryTree.prototype.toArray = function(array) { //left-right-root
   if (array === undefined) array = [];
-  
+
   if (this.left) {
     array = this.left.toArray(array);
   }
-  
+
   if (this.right) {
     array = this.right.toArray(array);
   }
 
-  if (this) {
-    array.push(this.value);
-  }
+  array.push(this.value);
 
   return array;
 };
