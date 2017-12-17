@@ -1,0 +1,19 @@
+{
+  "name": "lab-shannon",
+  "version": "1.0.0",
+  "description": "working with binary trees to create find, toString and toArray methods",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest -i --coverage",
+    "lint": "eslint ./"
+  },
+  "author": "shannon",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^4.13.1",
+    "jest": "^21.2.1"
+  }
+}
