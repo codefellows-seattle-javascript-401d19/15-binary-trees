@@ -34,6 +34,11 @@ describe('binary-tree.js', () => {
       expect(BinaryTree.prototype.toString()).toEqual('1\n2\n3\n4\n5\n');
           
     });
+
+    test('should not be null', () => {
+      expect(BinaryTree.prototype.toString()).not.toBeNull();
+          
+    });
   });
 
   describe('TOARRAY method should function properly', () => {
