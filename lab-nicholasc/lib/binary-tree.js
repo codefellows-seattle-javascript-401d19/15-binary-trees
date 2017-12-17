@@ -8,7 +8,6 @@ function BinaryTree(value){
 }
 
 BinaryTree.prototype.appendToHook = function(value, hookValue){
-  console.log(this);
 
   if(this === null){
     return;
@@ -62,12 +61,13 @@ BinaryTree.prototype.preOrderToString = function(string){
   return string;
 };
 
-BinaryTree.prototype.postOrderToArray = (arr) => {
+BinaryTree.prototype.postOrderToArray = function(arr){
   if(arr === undefined){
-    arr = [this.value];
+    arr = [];
   }
-  if(this.left)
+  if(this.left){
     arr = this.left.postOrderToArray(arr);
+  }
   if(this.right)
     arr = this.right.postOrderToArray(arr);
 
@@ -75,31 +75,5 @@ BinaryTree.prototype.postOrderToArray = (arr) => {
 
   return arr;
 };
-
-
-let preOrderTraversal = (root) => {
-  if(root === null)
-    return;
-  console.log(root);
-  preOrderTraversal(root.left);
-  preOrderTraversal(root.right);
-};
-
-let postOrderTraversal = (root) => {
-  if(root === null)
-    return;
-  postOrderTraversal(root.left);
-  postOrderTraversal(root.right);
-  console.log(root);
-};
-
-let inOrderTraversal = (root) => {
-  if(root === null)
-    return;
-  inOrderTraversal(root.left);
-  console.log(root);
-  inOrderTraversal(root.right);
-};
-
 
 module.exports = BinaryTree;

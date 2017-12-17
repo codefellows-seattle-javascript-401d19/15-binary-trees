@@ -1,17 +1,16 @@
-#Lab 11
+#Lab 15
 
-##Middleware
-our middleware processes error handling in a specific and descriptive way.
-## Routes
-###GET
-a get route to http://localhost:<PORT>/api/recipes:id will make a get request to the server for all of the recipes stored in the mongo db or if an id is provided it grabs the specific recipe with that id.
-a get route to http://localhost:<PORT>/api/christmas-lists:id will make a get request to the server for all of the christmas lists stored in the mongo db or if an id is provided it grabs the specific recipe with that id.
-###POST
-a post route to http://localhost:<PORT>/api/recipes will make a post request to the server that will store a new recipe in the mongo db
-a post route to http://localhost:<PORT>/api/christmas-lists will make a post request to the server that will store a new christmas list in the mongo db
-###PUT
-a put route to http://localhost:<PORT>/api/recipes:id will make a put request to the server to change a recipe stored in the mongo db pertaining to the id provided
-a put route to http://localhost:<PORT>/api/christmas-lists:id will make a put request to the server to change a christmas list stored in the mongo db pertaining to the id provided
-###DELETE
-a delete route to http://localhost:<PORT>/api/recipes:id will make a delete request to the server to delete a recipe stored in the mongo db pertaining to the id provided
-a delete route to http://localhost:<PORT>/api/christmas-lists:id will make a delete request to the server to delete a christmas list stored in the mongo db pertaining to the id provided
+##append
+if called on a BinaryTree, BinaryTree.prototype.append takes in a value and appends a node with that value randomly as a leaf somewhere in the tree
+
+##appendToHook
+if called on a BinaryTree, BinaryTree.prototype.appendToHook takes in a value and a hookValue and appends a node with the value specified to a node in the tree with a value of hookValue
+
+##inOrderFind
+if called on a BinaryTree, BinaryTree.prototype.inOrderFind takes in a value searches the tree in order for a node with the value specified and returns that node
+
+##preOrderToString
+if called on a BinaryTree, BinaryTree.prototype.preOrderToString takes in a string and iterates over the tree in  pre order and concatenates the values into a string
+
+##postOrderToArray
+if called on a BinaryTree, BinaryTree.prototype.postOrderToArray takes in an array and iterates over the tree in  post order and appends the values into an array
