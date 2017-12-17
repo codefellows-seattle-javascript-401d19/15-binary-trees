@@ -4,7 +4,7 @@ const BinaryTree = require('../lib/binary-tree');
 
 describe('binary tree', () => {
   describe('create a new binary tree', () => {
-    test('binaryTree.create(value) should return an object with {value,left,right} properties', () => {
+    test('new BinaryTree(value) should return an object with {value,left,right} properties', () => {
       expect(new BinaryTree(10)).toEqual({value: 10, left: null, right: null});
     });
   });
@@ -69,7 +69,8 @@ describe('binary tree', () => {
       expect(Tree.find(2)).toEqual(two);
       expect(Tree.find(3)).toEqual(three);
       expect(Tree.find(4)).toEqual(four);      
-      expect(Tree.find(5)).toEqual(five);      
+      expect(Tree.find(5)).toEqual(five);  
+      expect(Tree.find(100000)).toEqual(null);    
     });
   });
 
@@ -99,7 +100,7 @@ describe('binary tree', () => {
       Tree.appendRight(three);
       Tree.appendLeft(four);
 
-      expect(Tree.toArray()).toEqual([4, 2, 3, 1]);    
+      expect(Tree.toArray()).toEqual([4, 2, 3, 1]);
     });
   });
 
