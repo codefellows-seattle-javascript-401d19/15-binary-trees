@@ -15,7 +15,7 @@ describe(`binaryTree.js`, () => {
   three.left = ten;
   three.right = eight;
 
-  describe(`Find method`, () => {
+  describe(`.find method`, () => {
     test(`The .find method should return the node with the specified value if there are no errors`, () => {
       expect(one.find(3).value).toEqual(3);
     });
@@ -29,7 +29,7 @@ describe(`binaryTree.js`, () => {
     });
   });
 
-  describe(`toString method`, () => {
+  describe(`.toString method`, () => {
     test(`The .toString method should return a string of all the elements in a pre-order traversal order`, () => {
       expect(one.toString(' ')).toEqual(' 1\n0\n7\n3\n10\n8\n');
       expect(three.toString('The nodes are: ')).toEqual(`The nodes are: 3\n10\n8\n`);
@@ -41,9 +41,14 @@ describe(`binaryTree.js`, () => {
     });
   });
 
-  describe(`toArray method`, () => {
+  describe(`.toArray method`, () => {
     test(`The .toArray method should return an array with all elements in a post-order traversal order`, () => {
       expect(one.toArray([])).toEqual([7,0,1,10,8,3]);
+    });
+    test(`The .toArray method should return an error if called without an array argument`, () => {
+      expect(() => {
+        zero.toArray();
+      }).toThrow('An array must be provided as the argument');
     });
   });
 });

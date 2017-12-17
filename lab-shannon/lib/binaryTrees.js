@@ -44,12 +44,24 @@ function BinaryTree(value){
   };
 
   this.toArray = function(array){ // post-order traversal (left-right-root)
-    if(!this)
-      return;
+    let leftArray;
+    let rightArray;
+    if(typeof array !== 'object'){
+      throw new Error(`An array must be provided as the argument`);
+    }
+    if(this.left){
+      leftArray = this.left.toArray(array);
+      console.log(leftArray);
+    }
+    if(this.right){
+      rightArray = this.right.toArray(array);
+      // console.log(rightArray);
+    }
+    array.push(leftArray);
+    array.push(rightArray);
+    array.push(this.value);
 
-    this.left.toArray(array);
-    this.right.toArray(array);
-    array.push(this);
+    return array;
   };
 }
 
