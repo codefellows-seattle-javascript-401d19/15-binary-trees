@@ -39,28 +39,20 @@ function BinaryTree(value){
     if(this.right){
       str = this.right.toString(str);
     }
-
     return str;
   };
 
   this.toArray = function(array){ // post-order traversal (left-right-root)
-    let leftArray;
-    let rightArray;
     if(typeof array !== 'object'){
       throw new Error(`An array must be provided as the argument`);
     }
     if(this.left){
-      leftArray = this.left.toArray(array);
-      console.log(leftArray);
+      array = this.left.toArray(array);
     }
     if(this.right){
-      rightArray = this.right.toArray(array);
-      // console.log(rightArray);
+      array = this.right.toArray(array);
     }
-    array.push(leftArray);
-    array.push(rightArray);
     array.push(this.value);
-
     return array;
   };
 }
