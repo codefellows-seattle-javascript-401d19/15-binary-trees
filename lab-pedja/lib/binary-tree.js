@@ -42,10 +42,8 @@ BinaryTree.prototype.find = function (value) {
 
 // TODO toString(str) should iterate over all child nodes using a pre-order traversal and concatenate their values separated by newlines in to a string
 
-BinaryTree.prototype.toString = function (value) {
-  if(typeof value !== 'number'){
-    throw new TypeError('value should be a number');
-  }
+BinaryTree.prototype.toString = function () {
+  
   let one = new BinaryTree(1);
   let two = new BinaryTree(2);
   let three = new BinaryTree(3);
@@ -58,23 +56,20 @@ BinaryTree.prototype.toString = function (value) {
   three.right = five;
 
   // TODO add stringify method here
-  let foundNode;
-  let inOrderTraversal = function (root) {
-    if(root === null) {
-      return;
-    }
+  let result = [];
+  let output;
+  let preOrderTraversal = (root) => {
 
-    inOrderTraversal(root.left);
-    if(value === root.value) {
-      foundNode = value;
-    }
-    inOrderTraversal(root.right);
+    if(root === null)
+      return;
+  
+    result.push(root.value.toString());
+    preOrderTraversal(root.left);
+    preOrderTraversal(root.right);
   };
-  if(foundNode === undefined){
-    foundNode = null;
-  }
-  inOrderTraversal(one);
-  return foundNode;
+  preOrderTraversal(one);
+  output = result.join('\n');
+  return output;
 };
 
 module.exports = BinaryTree;
