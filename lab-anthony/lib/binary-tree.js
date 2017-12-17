@@ -1,11 +1,10 @@
 'use strict';
 
-class BinaryTree {
-  constructor(value) {
-    this.value = value;
-    this.left = null;
-    this.right = null;
-  }
+function BinaryTree(value) {
+  this.value = value;
+  this.left = null;
+  this.right = null;
+  return this;
 }
 
 module.exports = BinaryTree;
