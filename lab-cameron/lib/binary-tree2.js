@@ -53,15 +53,15 @@ const BinaryTree2 = function() {
     let found = null;
 
     const findRec = node => {
-      if (node.left) {
+      if (node.left && found === null) {
         findRec(node.left);
       }
 
-      if (node.value === value) {
+      if (node.value === value && found === null) {
         found = node;
       }
 
-      if (node.right) {
+      if (node.right && found === null) {
         findRec(node.right);
       }
 
