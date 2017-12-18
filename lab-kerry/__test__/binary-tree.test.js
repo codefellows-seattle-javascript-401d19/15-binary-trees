@@ -1,6 +1,6 @@
 'use strict';
 
-let BinaryTree = require('../model/binary-tree');
+let BinaryTree = require('../lib/binary-tree');
 
 
 let eleven = new BinaryTree(11);

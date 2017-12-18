@@ -1,18 +1,10 @@
 'use strict';
 
 const BinaryTree = function(value) {
-    this.value = value;
-    this.left = null;
-    this.right = null;
-  }
-
-  // BinaryTree.prototype.appendLeft(root, value) {
-
-  // }
-
-  // BinaryTree.prototype.appendRight(root, value) {
-
-  // }
+  this.value = value;
+  this.left = null;
+  this.right = null;
+};
 
 BinaryTree.prototype.find = function(value) {
   let foundIt = null;
@@ -47,10 +39,10 @@ BinaryTree.prototype.concatToString = function (str = '') {
 
 BinaryTree.prototype.pushToArray = function (arr = []) {
   
-  if (this.left !=null) {
+  if (this.left != null) {
     arr = this.left.pushToArray(arr);
   }
-  if (this.right !=null) {
+  if (this.right != null) {
     arr = this.right.pushToArray(arr);
   }
   
@@ -59,4 +51,4 @@ BinaryTree.prototype.pushToArray = function (arr = []) {
   return arr;
 };
 
-    module.exports = BinaryTree;
+module.exports = BinaryTree;
