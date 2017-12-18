@@ -1,15 +1,5 @@
 'use strict';
 
-
-class BinaryTree{
-  constructor(value){
-    this.value = value;
-    this.left = null;
-    this.right = null;
-
-  }
-}
-
 let one = new BinaryTree(1);
 let two = new BinaryTree(2);
 let three = new BinaryTree(3);
@@ -22,12 +12,13 @@ one.right = three;
 three.left = four;
 three.right = five;
 
-BinaryTree.prototype.find = function(root) {
-  console.log('====================================');
-  console.log(root);
-  console.log('====================================');
-   
-};
+function BinaryTree(value, left, right){
+  this.value = value;
+  this.left = null;
+  this.right = null;
+}
+
+
 
 BinaryTree.preOrder = (root) =>{
   if(root === null)
