@@ -24,7 +24,7 @@ This lab implements the creation, searching, and listing, of values in a binary-
 1. `eslint`
 2. `jest`
 
-## BinaryTree Methods
+## BinaryTree Methods - Worst Case: O(n)
 - `.addLeft(<value>)` - adds a left property to the current node (throws an error if one already exists)
 - `.addRight(<value>)` - adds a right property to the current node (throws an error if one already exists)
 - `.appendLeft(<value>)` - adds a new leaf to the left the current node 
