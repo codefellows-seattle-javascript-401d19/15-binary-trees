@@ -1,5 +1,8 @@
 #Lab 15
 
+##Big O
+O(n) = n for all of these functions where n is the amount of objects in the tree
+
 ##append
 if called on a BinaryTree, BinaryTree.prototype.append takes in a value and appends a node with that value randomly as a leaf somewhere in the tree
 

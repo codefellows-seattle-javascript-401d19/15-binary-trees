@@ -52,7 +52,7 @@ BinaryTree.prototype.preOrderToString = function(string){
     string = this.value;
   }
   else{
-    string = `${string} ${this.value}`;
+    string = `${string}\n${this.value}`;
   }
   if(this.left)
     string = this.left.preOrderToString(string);
