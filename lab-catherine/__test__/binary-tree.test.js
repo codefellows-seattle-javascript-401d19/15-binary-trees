@@ -13,8 +13,8 @@ describe('binary-tree.js', () => {
 
     test('should return null if a node with the value is not found', () => {
       
-      expect(BinaryTree.prototype.find(6)).toEqual(null);
-      expect(BinaryTree.prototype.find(9)).toEqual(null);    
+      expect(BinaryTree.prototype.find(6)).toBeNull();
+      expect(BinaryTree.prototype.find(9)).toBeNull();    
     });
 
     test('should throw an error if value is not a number', () => {
