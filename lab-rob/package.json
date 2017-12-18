@@ -1,0 +1,19 @@
+{
+  "name": "401d19-lab-15-reed",
+  "version": "1.0.0",
+  "description": "Code Fellows Code 401d19 Lab 15 - Trees",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest -i --coverage",
+    "lint": "eslint ."
+  },
+  "author": "Robert Reed",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^4.13.1",
+    "jest": "^21.2.1"
+  }
+}
