@@ -27,7 +27,7 @@ BinaryTree.prototype.findInOrder = function(value){
   return null;
 };
 
-BinaryTree.prototype.preOrderToString = function (string) {
+BinaryTree.prototype.preOrderToString = function(string){
 
   if (!string){
     string = `${this.value}`;
@@ -45,7 +45,7 @@ BinaryTree.prototype.preOrderToString = function (string) {
   return string;
 };
 
-BinaryTree.prototype.postOrderToArray = function (array) {
+BinaryTree.prototype.postOrderToArray = function(array){
   if (!array) {
     array = [];
   }
