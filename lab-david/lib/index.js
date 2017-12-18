@@ -8,7 +8,7 @@ const BinaryTree = function(value) {
 
   // methods on the constructor
   // iterate over all child nodes using an in-order traversal and return first node with the value, return null if not found
-  BinaryTree.prototype.find = function(root) {
+  BinaryTree.prototype.find = function(value) {
 
     if(root !== null)
       return root.value;
@@ -22,7 +22,10 @@ const BinaryTree = function(value) {
   };
 
   // iterate over all nodes using pre-order traversal and concatenate their values separated by newlines into a string
-  BinaryTree.prototype.toString = function(root) {
+  BinaryTree.prototype.toString = function(str) {
+    if(typeof str != 'string')
+      throw new TypeError('argument <string> must be an string');
+
     let string = '';
 
     if(root === null)
@@ -36,7 +39,9 @@ const BinaryTree = function(value) {
   };
 
   // should use post-order traversal push all tree elements into an array
-  BinaryTree.prototype.toArray = function(root) {
+  BinaryTree.prototype.toArray = function(array) {
+    if(!Array.isArray(array))
+      throw new TypeError('argument <array> must be an array');
 
     let newArray = [];
 
@@ -51,6 +56,7 @@ const BinaryTree = function(value) {
   };  
 };
 
+// moved these to the tests so can remove
 // this is all the nodes 
 let one = new BinaryTree(1);
 let two = new BinaryTree(2);
