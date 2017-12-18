@@ -1,10 +1,10 @@
 'use strict';
 
 // setting up constructor
-const binaryTree = function(value, left, right) {
+const binaryTree = function(value) {
   this.value = value;
-  this.left = left;
-  this.right = right;
+  this.left = null;
+  this.right = null;
 
   // methods on the constructor
   // iterate over all child nodes using an in-order traversal and return first node with the value, return null if not found
