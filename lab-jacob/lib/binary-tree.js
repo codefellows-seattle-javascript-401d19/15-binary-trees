@@ -18,6 +18,29 @@ one.right = three;
 three.left = four;
 three.right = five;
 
+BinaryTree.prototype.inOrder = function (root){
+  
+  if (this.left){
+    let foundValueLeft = this.left.inOrder;
+    if(foundValueLeft){
+      return foundValueLeft;
+    }
+  }
+  
+  if (this.root === root){
+    return this;
+  }
+
+  if (this.right){
+    let foundValueRight = this.right.inOrder;
+    if(foundValueRight){
+      return foundValueRight;
+    }
+  }
+
+  return null;
+};
+
 
 BinaryTree.preOrder = (root) =>{
   if(root === null)
@@ -37,5 +60,3 @@ BinaryTree.postOrder = (root) => {
   console.log(`Visiting ${root.value}`);
 };
 
-// BinaryTree.preOrder(one);
-BinaryTree.postOrder(one);
