@@ -97,20 +97,22 @@ BinaryTree.prototype.toString = function() { // root-left-right
 };
 
 // ============== TO ARRAY ==============
-BinaryTree.prototype.toArray = function(array) { //left-right-root
-  if (array === undefined) array = [];
+BinaryTree.prototype.toArray = function() { //left-right-root
+  return (function recurse(node, array) {
+    if (array === undefined) array = [];
 
-  if (this.left) {
-    array = this.left.toArray(array);
-  }
+    if (node.left) {
+      array = recurse(node.left, array);
+    }
 
-  if (this.right) {
-    array = this.right.toArray(array);
-  }
+    if (node.right) {
+      array = recurse(node.right, array);
+    }
 
-  array.push(this.value);
+    array.push(node.value);
 
-  return array;
+    return array;
+  })(this);
 };
 
 module.exports = BinaryTree;
