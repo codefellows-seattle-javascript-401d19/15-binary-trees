@@ -29,34 +29,42 @@ BinaryTree.prototype.find = function(value) {
 // TODO toString(str) should iterate over all child nodes using a pre-order traversal and concatenate their values separated by newlines in to a string
 
 
-BinaryTree.prototype.toString = function () {
-  
-  let one = new BinaryTree(1);
-  let two = new BinaryTree(2);
-  let three = new BinaryTree(3);
-  let four = new BinaryTree(4);
-  let five = new BinaryTree(5);
-  
-  one.left = two;
-  one.right = three;
-  three.left = four;
-  three.right = five;
+BinaryTree.prototype.toString = function (str) {
 
-  let result = [];
-  let output;
-  function preOrderTraversal (root) {
-
-    if(root === null)
-      return;
-  
-    result.push(root.value.toString());
-    preOrderTraversal(root.left);
-    preOrderTraversal(root.right);
+  if(typeof str !== 'string'){
+    throw new TypeError(`toString takes arg that is a string`);
   }
-  preOrderTraversal(one);
-  output = result.join('\n');
-  return output;
+  if(this){
+    str += this.value + `\n`;
+  }
+  if(this.left){
+    str = this.left.toString(str);
+  }
+  if(this.right){
+    str = this.right.toString(str);
+  }
+  let result = str.toString();
+  
+  return result;
+
 };
 
+// .toArray(array) should use a post-order traversal and push all the tree's elements into an array.
+
+BinaryTree.prototype.toArray = function (array) {
+  if(!Array.isArray(array)){
+    throw new TypeError(`toArray takes arg that is an array`);
+  }
+  if(this.left){
+    this.left.toArray(array);
+  }
+  if(this.right){
+    this.right.toArray(array);
+  }
+  
+  array.push(this.value);
+    
+  return array;
+};
 
 module.exports = BinaryTree;
