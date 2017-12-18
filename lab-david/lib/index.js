@@ -13,9 +13,9 @@ const binaryTree = function(value) {
     if(root !== null)
       return root.value;
 
-    find(root.left);
-    find(root.value);
-    find(root.right);
+    binaryTree.find(root.left);
+    binaryTree.find(root.value);
+    binaryTree.find(root.right);
 
     return null;
 
@@ -29,8 +29,8 @@ const binaryTree = function(value) {
       return;
 
     string = string `+ ${root.value}`;
-    toString(root.left);
-    toString(root.right);
+    binaryTree.toString(root.left);
+    binaryTree.toString(root.right);
     return string;
 
   };
@@ -40,9 +40,9 @@ const binaryTree = function(value) {
 
     let newArray = [];
 
-    toArray(root.left);
-    toArray(root.right);
-    toArray(root.value);
+    binaryTree.toArray(root.left);
+    binaryTree.toArray(root.right);
+    binaryTree.toArray(root.value);
 
     newArray.push(value);
 
