@@ -8,7 +8,7 @@ const BinaryTree = function(value) {
 
   // methods on the constructor
   // iterate over all child nodes using an in-order traversal and return first node with the value, return null if not found
-  BinaryTree.prototype.find = function(value) {
+  BinaryTree.prototype.find = function(root) {
 
     if(root !== null)
       return root.value;
@@ -56,7 +56,7 @@ const BinaryTree = function(value) {
   };  
 };
 
-// moved these to the tests so can remove
+// moved these to the tests so can remove, i think
 // this is all the nodes 
 let one = new BinaryTree(1);
 let two = new BinaryTree(2);
