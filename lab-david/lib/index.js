@@ -6,7 +6,7 @@ const binaryTree = function(value, left, right) {
   this.left = left;
   this.right = right;
 
-  //methods on the constructor
+  // methods on the constructor
   // iterate over all child nodes using an in-order traversal and return first node with the value, return null if not found
   binaryTree.prototype.find = function(root) {
 
