@@ -25,11 +25,11 @@ let seven = new BinaryTree(7);
 one.left = two;
 one.right = three;
 
-three.left = four
+three.left = four;
 three.right = five;
 
 four.left = six;
 four.right = seven;
 
 console.log(one);
-one.inOrderTraversal(seven);
+one.inOrderTraversal(one);
