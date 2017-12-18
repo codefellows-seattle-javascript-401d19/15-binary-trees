@@ -14,4 +14,6 @@ You must manually set the left.value and right.value.
 
 traverse.preOrderTraversal('root')
 traverse.postOrderTraversal('root')
-traverse.inOrderTraversal('root', 'search value') 
+traverse.inOrderTraversal('root', 'search value')
+
+worst case scenario for each function is Big O of n 
