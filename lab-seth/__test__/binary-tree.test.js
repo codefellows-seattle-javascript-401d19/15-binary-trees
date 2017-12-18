@@ -1,3 +1,4 @@
+
 'use strict';
 const binaryTree = require('../lib/binary-tree');
 
@@ -16,7 +17,6 @@ const treeBuilder = () => {
   three.right = five;
   four.left = six;
   four.right = seven;
-  console.log(one);
   return one;
 };
 
@@ -25,8 +25,9 @@ describe('Binary Tree JS Functions', () => {
   describe('Find() prototype', () => {
     test('This test should pass when a normal case value is searched for', () => {
       let tree = treeBuilder();
-      console.log(tree);
-      expect(tree.find(1)).toEqual(tree);
+      console.log('tree: ',tree);
+      console.log('tree: ',tree.find(6));
+      expect(tree.find(6)).toEqual(tree.right.left.left);
 
     })
     test(' This test should PASS if the Binary Tree find() prototype is setup correctly', () => {
