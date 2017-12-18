@@ -1,0 +1,19 @@
+{
+  "name": "lab-kerry",
+  "version": "1.0.0",
+  "description": "Binary Tree and Some Basic Functions",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest -i --coverage"
+  },
+  "keywords": [
+    "binary-tree",
+    "binary-tree-find"
+  ],
+  "author": "Kerry Nordstrom",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^4.13.1",
+    "jest": "^21.2.1"
+  }
+}
