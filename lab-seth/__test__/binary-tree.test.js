@@ -25,12 +25,12 @@ describe('Binary Tree JS Functions', () => {
   describe('Find() prototype', () => {
     test('This test should pass when a normal case value is searched for', () => {
       let tree = treeBuilder();
-      console.log('tree: ',tree);
-      console.log('tree: ',tree.find(6));
       expect(tree.find(6)).toEqual(tree.right.left.left);
+      expect(tree.find(7)).toEqual(tree.right.left.right);
+      expect(tree.find(1)).toEqual(tree);
 
     })
-    test(' This test should PASS if the Binary Tree find() prototype is setup correctly', () => {
+    test(' This test should PASS if value that does not exist in the tree is searched for', () => {
 
     })
     test(' This test should PASS if the Binary Tree find() prototype is setup correctly', () => {

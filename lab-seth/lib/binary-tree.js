@@ -1,6 +1,6 @@
 'use strict';
 
-function BinaryTree(value) {
+const BinaryTree = function (value) {
   this.value = value;
   this.left = null;
   this.right = null;
@@ -18,31 +18,21 @@ BinaryTree.prototype.find = function(value) {
   let node = this;
   let foundNode = null;  
 
-  // if(this.left){
-  //   if(this.left.)
-  // }
-
   let hunter = function (node, value) {
+    if(node.left) hunter(node.left, value);
     if(node.value === value) {
-      console.log('Found node: ', node);
       foundNode = node;
       return;
-    } else {
-      if(node.left === null && node.right === null) {
-        return;
-      }else{
-        hunter(node.left, value);
-        hunter(node.right, value);
-      }
     }
+    if(node.right) hunter(node.right, value);
   };
   
   hunter(node, value);
   return foundNode;
 };
 
-//TODO: ADD toString() METHOD
+//TODO: ADD toString() PRE-ORDER METHOD
 
-//TODO: ADD toArray() METHOD
+//TODO: ADD toArray() POST-ORDER METHOD
 
 module.exports.BinaryTree = BinaryTree;
