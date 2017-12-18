@@ -1,51 +1,66 @@
 'use strict';
 
-function BinaryTree(value){
+const BinaryTree = function(value){
   this.value = value;
   this.left = null;
   this.right = null;
-}
-
-const one = new BinaryTree(1);
-const two = new BinaryTree(2);
-const three = new BinaryTree(3);
-const four = new BinaryTree(4);
-const five = new BinaryTree(5);
-
-one.left = two;
-one.right = three;
-three.left = four;
-three.right = five;
-
-BinaryTree.preOrderTraversal = root => {
-
-  if (root === null){
-    return;
-  }
-
-  console.log(root.value);
-  BinaryTree.preOrderTraversal(root.left);
-  BinaryTree.preOrderTraversal(root.right);
 };
 
-BinaryTree.inOrderTraversal = root => {
+BinaryTree.prototype.findInOrder = function(value){
 
-  if (root === null){
-    return;
+  if (this.left){
+    if (this.left.findInOrder(value)){
+      return this.left.findInOrder(value);
+    }
   }
 
-  BinaryTree.inOrderTraversal(root.left);
-  console.log(root.value);
-  BinaryTree.inOrderTraversal(root.right);
-};
-
-BinaryTree.postOrderTraversal = root => {
-
-  if (root === null){
-    return;
+  if (this.value === value){
+    return this;
   }
 
-  BinaryTree.postOrderTraversal(root.left);
-  BinaryTree.postOrderTraversal(root.right);
-  console.log(root.value);
+  if (this.right){
+    if (this.right.findInOrder(value)){
+      return this.right.findInOrder(value);
+    }
+  }
+
+  return null;
 };
+
+BinaryTree.prototype.preOrderToString = function(string){
+
+  if (!string){
+    string = `${this.value}`;
+  } else {
+    string += `\n${this.value}`;
+  }
+  
+  if (this.left) {
+    string = this.left.preOrderToString(string);
+  }
+  
+  if (this.right) {
+    string = this.right.preOrderToString(string);
+  }
+  return string;
+};
+
+BinaryTree.prototype.postOrderToArray = function(array){
+  if (!array) {
+    array = [];
+  }
+
+  if (this.left) {
+    array.concat(this.left.postOrderToArray(array));
+  }
+
+  if (this.right) {
+    array.concat(this.right.postOrderToArray(array));
+  }
+
+  array.push(this.value);
+  
+  return array;
+};
+
+module.exports = BinaryTree;

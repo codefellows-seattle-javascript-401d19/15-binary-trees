@@ -1,0 +1,32 @@
+{
+  "name": "lab-andrew",
+  "version": "1.0.0",
+  "description": "binary-tree",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "test": "jest -i --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ALB37/15-binary-trees.git"
+  },
+  "keywords": [
+    "data-structures",
+    "trees",
+    "binary-trees"
+  ],
+  "author": "Andrew Bloom",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ALB37/15-binary-trees/issues"
+  },
+  "homepage": "https://github.com/ALB37/15-binary-trees#readme",
+  "devDependencies": {
+    "eslint": "^4.13.1",
+    "jest": "^21.2.1"
+  }
+}
