@@ -15,6 +15,7 @@ three.right = five;
 describe('binary-tree.js', () => {
   test('FIND method should return node with a specified value', () => {
     expect(one.find(2)).toEqual(two);
+    expect(one.find(3)).toEqual(three);
   });
  
   test('FIND method should throw error if value is not a number', () => {
