@@ -25,10 +25,10 @@ This lab implements the creation, searching, and listing, of values in a binary-
 2. `jest`
 
 ## BinaryTree Methods
-- `.addLeft` - adds a left property to the current node (throws an error if one already exists)
-- `.addRight` - adds a right property to the current node (throws an error if one already exists)
-- `.appendLeft` - adds a new leaf to the left the current node 
-- `.appendRight` - adds a new leaf to the right the current node 
-- `.find(value)` - finds a given value from the given node and returns the node with the given value (searches `in-order`)
+- `.addLeft(<value>)` - adds a left property to the current node (throws an error if one already exists)
+- `.addRight(<value>)` - adds a right property to the current node (throws an error if one already exists)
+- `.appendLeft(<value>)` - adds a new leaf to the left the current node 
+- `.appendRight(<value>)` - adds a new leaf to the right the current node 
+- `.find(<value>)` - finds a given value from the given node and returns the node with the given value (searches `in-order`)
 - `.toString()` - turns all values in a tree into a string with `\n` seperating each value (adds by `pre-order`)
 - `.toArray()` - pushes all values into an array (pushes by `post-order`)

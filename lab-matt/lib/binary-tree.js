@@ -79,19 +79,21 @@ BinaryTree.prototype.find = function(value) { // left-root-right
 };
 
 // ============== TO STRING ==============
-BinaryTree.prototype.toString = function(string) { // root-left-right
-  if (string === undefined) string = this.value;
-  else string = `${string}\n${this.value}`;
+BinaryTree.prototype.toString = function() { // root-left-right
+  return (function recurse(node, string) {
+    if (string === undefined) string = node.value;
+    else string = `${string}\n${node.value}`;
 
-  if (this.left) {
-    string = this.left.toString(string);
-  }
-  
-  if (this.right) {
-    string = this.right.toString(string);
-  }
+    if (node.left) {
+      string = recurse(node.left, string);
+    }
+    
+    if (node.right) {
+      string = recurse(node.right, string);
+    }
 
-  return string;
+    return string;
+  })(this);
 };
 
 // ============== TO ARRAY ==============
