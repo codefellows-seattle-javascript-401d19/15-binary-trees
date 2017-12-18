@@ -15,15 +15,13 @@ BinaryTree.prototype.inOrderTraversal = function(root) {
 };
 
 BinaryTree.prototype.find = function(value) {
-  let found = null;
+  let found = false;
   let node = this;
-
-  console.log('Finding ', value);
 
   let hunter = (node, value) => {
     if(node.value === value) {
       found = true;
-      return console.log('Returned Node: ',node);
+      return node;
     } else {
       if(node.left === null && node.right === null) {
         return;
@@ -35,27 +33,27 @@ BinaryTree.prototype.find = function(value) {
   };
 
   hunter(node, value);
-  if(found === null) return console.log(`${value} NOT FOUND!  `); 
-  
-    
+  if(found === false) return null;
 };
 
-let one = new BinaryTree(1);
-let two = new BinaryTree(2);
-let three = new BinaryTree(3);
-let four = new BinaryTree(4);
-let five = new BinaryTree(5);
-let six = new BinaryTree(6);
-let seven = new BinaryTree(7);
+module.exports.BinaryTree = BinaryTree;
 
-one.left = two;
-one.right = three;
-three.left = four;
-three.right = five;
-four.left = six;
-four.right = seven;
+// let one = new binaryTree.BinaryTree(1);
+// let two = new BinaryTree(2);
+// let three = new BinaryTree(3);
+// let four = new BinaryTree(4);
+// let five = new BinaryTree(5);
+// let six = new BinaryTree(6);
+// let seven = new BinaryTree(7);
+
+// one.left = two;
+// one.right = three;
+// three.left = four;
+// three.right = five;
+// four.left = six;
+// four.right = seven;
 
 
-one.find(10);
-one.find(1);
-one.find(4);
+// one.find(10);
+// one.find(1);
+// one.find(4);
