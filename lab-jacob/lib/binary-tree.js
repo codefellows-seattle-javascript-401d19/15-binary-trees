@@ -1,5 +1,11 @@
 'use strict';
 
+function BinaryTree(value){
+  this.value = value;
+  this.left = null;
+  this.right = null;
+}
+
 let one = new BinaryTree(1);
 let two = new BinaryTree(2);
 let three = new BinaryTree(3);
@@ -12,13 +18,6 @@ one.right = three;
 three.left = four;
 three.right = five;
 
-function BinaryTree(value, left, right){
-  this.value = value;
-  this.left = null;
-  this.right = null;
-}
-
-
 
 BinaryTree.preOrder = (root) =>{
   if(root === null)
@@ -27,13 +26,14 @@ BinaryTree.preOrder = (root) =>{
   console.log(`Visiting ${root.value}`);
   BinaryTree.preOrder(root.left);
   BinaryTree.preOrder(root.right);
+
 };
-BinaryTree.postOrder = () => {
+BinaryTree.postOrder = (root) => {
   if(root === null)
     return; 
 
-  BinaryTree.postOrderTraversal(root.left);
-  BinaryTree.postOrderTraversal(root.right);
+  BinaryTree.postOrder(root.left);
+  BinaryTree.postOrder(root.right);
   console.log(`Visiting ${root.value}`);
 };
 
