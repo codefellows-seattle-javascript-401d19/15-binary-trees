@@ -16,7 +16,8 @@ BinaryTree.prototype.inOrderTraversal = function(root) {
 
 BinaryTree.prototype.find = function(value) {
   let node = this;
-  let foundNode = null;  
+  let foundNode = null; 
+  if(typeof value !== 'number') return null;
 
   let hunter = function (node, value) {
     if(node.left) hunter(node.left, value);

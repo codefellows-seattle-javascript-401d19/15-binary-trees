@@ -28,13 +28,18 @@ describe('Binary Tree JS Functions', () => {
       expect(tree.find(6)).toEqual(tree.right.left.left);
       expect(tree.find(7)).toEqual(tree.right.left.right);
       expect(tree.find(1)).toEqual(tree);
+    });
+    
+    test(' This test should PASS if a non-number is searched for', () => {
+      let tree = treeBuilder();
+      expect(tree.find(null)).toBeNull();
+      expect(tree.find('string')).toBeNull();
+    });
 
-    })
-    test(' This test should PASS if value that does not exist in the tree is searched for', () => {
-
-    })
-    test(' This test should PASS if the Binary Tree find() prototype is setup correctly', () => {
-
+    test(' This test should PASS if the value searched for does not exist in the tree', () => {
+      let tree = treeBuilder();
+      expect(tree.find(10)).toBeNull();
+      expect(tree.find(-10)).toBeNull();
     });
   });
 
