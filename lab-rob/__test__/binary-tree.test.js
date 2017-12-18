@@ -41,7 +41,7 @@ describe('binary-tree.js', () => {
         expect(four.find(6)).toEqual(six);
       });
 
-      test('find should return the calling node if the calling node is unique and has the desired value', () => {
+      test('find should return the calling node if the calling node is unique and has the desired value.', () => {
         expect(one.find(1)).toEqual(one);
         expect(six.find(6)).toEqual(six);
       });
@@ -57,14 +57,14 @@ describe('binary-tree.js', () => {
         expect(five.find(3)).toEqual(leftDup);
       });
 
-      test('find should return null if no node has the requested value', () => {
+      test('find should return null if no node has the requested value.', () => {
         expect(one.find('nope')).toBeNull();
         expect(three.find('nope')).toBeNull();
       });
     });
 
     describe('toString(str) uses a pre-order traversal', () => {
-      test('toString should return a concatenated string of all values using a pre-order traversal if an empty string is provided', () => {
+      test('toString should return a concatenated string of all values using a pre-order traversal if an empty string is provided.', () => {
         expect(one.toString('')).toEqual('1\n2\n3\n4\n6\n5\n3');
         expect(four.toString('')).toEqual('4\n6');
         expect(six.toString('')).toEqual('6');
@@ -82,7 +82,7 @@ describe('binary-tree.js', () => {
         expect(six.toString('bob')).toEqual('bob\n6');
       });
 
-      test('toString should throw an error if a non-string is provided as argument', () => {
+      test('toString should throw an error if a non-string is provided as argument.', () => {
         expect(() => {
           one.toString(9);
         }).toThrow();
@@ -90,19 +90,13 @@ describe('binary-tree.js', () => {
     });
 
     describe('toArray(array) uses a post-order traversal', () => {
-      test('toArray should throw an error if a non-array is provided as argument', () => {
-        expect(() => {
-          one.toArray(98);
-        }).toThrow();
-      });
-
-      test('toArray should return an array of all values using a post-order traversal if an empty array is provided as argument', () => {
+      test('toArray should return an array of all values using a post-order traversal if an empty array is provided as argument.', () => {
         expect(one.toArray([])).toEqual([2, 6, 4, 3, 5, 3, 1]);
         expect(three.toArray([])).toEqual([6, 4, 3, 5, 3]);
         expect(five.toArray([])).toEqual([3, 5]);
       });
 
-      test('if no argument is provided, an empty array will be supplied and returned', () => {
+      test('if no argument is provided, an empty array will be supplied and returned.', () => {
         expect(one.toArray()).toEqual([2, 6, 4, 3, 5, 3, 1]);
         expect(three.toArray()).toEqual([6, 4, 3, 5, 3]);
         expect(five.toArray()).toEqual([3, 5]);
@@ -112,6 +106,12 @@ describe('binary-tree.js', () => {
         expect(one.toArray(['hey', 'there', 'bob'])).toEqual(['hey', 'there', 'bob', 2, 6, 4, 3, 5, 3, 1]);
         expect(three.toArray(['hey', 'there', 'bob'])).toEqual(['hey', 'there', 'bob', 6, 4, 3, 5, 3]);
         expect(five.toArray(['hey', 'there', 'bob'])).toEqual(['hey', 'there', 'bob', 3, 5]);
+      });
+
+      test('toArray should throw an error if a non-array is provided as argument.', () => {
+        expect(() => {
+          one.toArray(98);
+        }).toThrow();
       });
     });
   });
