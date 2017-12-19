@@ -40,7 +40,7 @@ BinaryTree.prototype.toString = function(str) {
   console.log(str);
   str = str.concat(this.value, str); 
   console.log(str);
-  BinaryTree.toString(this.left);
+  BinaryTree.toString(this.left); //refactor to this.left.toString() ??
   BinaryTree.toString(this.right);
   return str;
 
