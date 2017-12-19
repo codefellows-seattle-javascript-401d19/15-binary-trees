@@ -4,7 +4,7 @@ const BinaryTree = function (value) {
   this.value = value;
   this.left = null;
   this.right = null;
-}
+};
 
 BinaryTree.prototype.inOrderTraversal = function(root) {
   if (root === null) return;
@@ -32,8 +32,37 @@ BinaryTree.prototype.find = function(value) {
   return foundNode;
 };
 
-//TODO: ADD toString() PRE-ORDER METHOD
+BinaryTree.prototype.toString = function (str = '') {
+  if (typeof str !== 'string')
+    throw new TypeError('argument must be a string');
 
-//TODO: ADD toArray() POST-ORDER METHOD
+  if (str === '')
+    str += this.value;
+  else
+    str += '\n' + this.value;
 
-module.exports.BinaryTree = BinaryTree;
+  if (this.left)
+    str = this.left.toString(str);
+
+  if (this.right)
+    str = this.right.toString(str);
+
+  return str;
+};
+
+BinaryTree.prototype.toArray = function (array = []) {
+  if (!Array.isArray(array))
+    throw new TypeError('argument must be an array.');
+
+  if (this.left)
+    array = this.left.toArray(array);
+
+  if (this.right)
+    array = this.right.toArray(array);
+
+  array.push(this.value);
+
+  return array;
+};
+
+module.exports = BinaryTree;
