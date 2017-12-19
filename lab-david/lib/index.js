@@ -10,7 +10,6 @@ const BinaryTree = function(value) {
   // iterate over all child nodes using an in-order traversal and return first node with the value, return null if not found
 BinaryTree.prototype.find = function(value) {
   if(this.value === value) {
-    console.log(value);
     return this;
   }
   if(this.value > 0)
@@ -18,12 +17,10 @@ BinaryTree.prototype.find = function(value) {
 
   if(this.left.value) {
     this.left.find(value);
-    console.log(this.value);
   }
   
   if(this.right.value) {
     this.right.find(value);
-    console.log(this.value);
   }
 
   else
@@ -40,9 +37,9 @@ BinaryTree.prototype.toString = function(str) {
   if(this === null)
     return;
 
-  str = str `+ ${this.value}`;
-  BinaryTree.toString(root.left);
-  BinaryTree.toString(root.right);
+  str = str.concat(this.value, str); 
+  BinaryTree.toString(this.left);
+  BinaryTree.toString(this.right);
   return str;
 
 };
