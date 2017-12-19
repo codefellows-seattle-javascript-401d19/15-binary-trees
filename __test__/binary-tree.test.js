@@ -27,5 +27,29 @@ describe('binary-tree.js', () => {
       ).toThrow();  
     });
   });
+  describe('TOSTRING method should return the concatenated values separated by newlines in to a string', () => {
+    
+    test('should return the concatenated values separated by newlines in to a string', () => {
+      expect(BinaryTree.prototype.toString()).toEqual('1\n2\n3\n4\n5\n');
+          
+    });
 
+    test('should not be null', () => {
+      expect(BinaryTree.prototype.toString()).not.toBeNull();
+          
+    });
+  });
+
+  describe('TOARRAY method should function properly', () => {
+    
+    test('should return an array with all of the elements in the binary tree', () => {
+      expect(BinaryTree.prototype.toArray()).toEqual([2, 4, 5, 3, 1]);
+          
+    });
+
+    test('should not be null', () => {
+      expect(BinaryTree.prototype.toArray()).not.toBeNull();
+          
+    });
+  });
 });
