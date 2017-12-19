@@ -1,0 +1,25 @@
+{
+  "name": "15-binary-trees",
+  "version": "1.0.0",
+  "description": "Lab 15",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest -i --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hazzed/15-binary-trees.git"
+  },
+  "author": "Dalton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hazzed/15-binary-trees/issues"
+  },
+  "homepage": "https://github.com/hazzed/15-binary-trees#readme",
+  "devDependencies": {
+    "jest": "^22.0.1"
+  }
+}
