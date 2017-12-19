@@ -12,7 +12,7 @@ BinaryTree.prototype.find = function(value) {
   if(this.value === value) {
     return this;
   }
-  if(this.value > 0)
+  if(this.value === null)
     return null;
 
   if(this.left.value) {
@@ -35,9 +35,11 @@ BinaryTree.prototype.toString = function(str) {
   str = '';
 
   if(this === null)
-    return;
+    return null;
 
+  console.log(str);
   str = str.concat(this.value, str); 
+  console.log(str);
   BinaryTree.toString(this.left);
   BinaryTree.toString(this.right);
   return str;
