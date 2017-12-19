@@ -32,18 +32,18 @@ BinaryTree.prototype.find = function(value) {
 
 // iterate over all nodes using pre-order traversal and concatenate their values separated by newlines into a string
 BinaryTree.prototype.toString = function(str) {
-  if(typeof str !== 'string')
-    throw new TypeError('argument <string> must be an string');
+  // if(typeof str !== 'string')
+  //   throw new TypeError('argument <string> must be an string');
 
-  let string = '';
+  str = '';
 
-  if(root === null)
+  if(this === null)
     return;
 
-  string = string `+ ${root.value}`;
+  str = str `+ ${this.value}`;
   BinaryTree.toString(root.left);
   BinaryTree.toString(root.right);
-  return string;
+  return str;
 
 };
 
@@ -52,15 +52,15 @@ BinaryTree.prototype.toArray = function(array) {
   if(!Array.isArray(array))
     throw new TypeError('argument <array> must be an array');
 
-  let newArray = [];
+  array = [];
 
-  BinaryTree.toArray(root.left);
-  BinaryTree.toArray(root.right);
-  BinaryTree.toArray(root.value);
+  BinaryTree.toArray(this.left);
+  BinaryTree.toArray(this.right);
+  BinaryTree.toArray(this.value);
 
-  newArray.push(value);
+  array.push(this);
 
-  return newArray;
+  return array;
 };  
 
 
