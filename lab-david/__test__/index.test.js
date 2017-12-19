@@ -2,7 +2,8 @@
 
 const BinaryTree = require('../lib/index');
 
-const testTree = () => {
+
+describe('binary tree - lib/index.js', () => {
   let one = new BinaryTree(1);
   let two = new BinaryTree(2);
   let three = new BinaryTree(3);
@@ -17,19 +18,15 @@ const testTree = () => {
   two.right = five;
 
   three.right = six;
-};
 
-describe('binary tree - lib/index.js', () => {
-  beforeEach(testTree);
 
   // test find method 
-  test(`find prototype should iterate over all the child nodes using 'in-order' traversal and return the first node value that has a value`, () => {
-    expect(BinaryTree.find(4).toEqual('four'));
+  test.only(`find prototype should iterate over all the child nodes using 'in-order' traversal and return the first node value that has a value`, () => {
+    expect(one.find(1)).toEqual(one);
   });
 
-  test(`find prototype should iterate over all the child nodes using 'in-order' traversal and return null if a node with a value is not found`, () => {
-    // let testTree = ;
-    expect(testTree.find(100).toEqual('null'));
+  test.only(`find prototype should iterate over all the child nodes using 'in-order' traversal and return null if a node with a value is not found`, () => {
+    expect(one.find(100)).toEqual(null);
   });
 
   // TODO : write another test for find proto - edge case
