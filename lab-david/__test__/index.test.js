@@ -34,8 +34,8 @@ describe('binary tree - lib/index.js', () => {
 
 
   // test toString method
-  test.only(`toString prototype should iterate over all the child nodes using 'pre-order' traversal and concatenate their values into a string separated by newlines`, () => {
-    expect(one.stringPreOrder(1)).toEqual(`\n1, \n2, \n5, \n4, \n3, \n6`);
+  test(`toString prototype should iterate over all the child nodes using 'pre-order' traversal and concatenate their values into a string separated by newlines`, () => {
+    expect(one.toString()).toEqual(`1\n2\n4\n5\n3\n6`);
   });
 
   // TODO : write another test for toString - normal case
@@ -46,7 +46,7 @@ describe('binary tree - lib/index.js', () => {
 
   // test toArray method
   test(`toArray method should iterate over all the child nodes using 'post-order' traversal and push all the trees elements into an array`, () => {
-    expect(one.ArrayifyPreOrder([1])).toEqual(`[4, 2, 5, 1, 3, 6]`);
+    expect(one.toArray([1])).toEqual(`[4, 2, 5, 1, 3, 6]`);
   });
 });
 

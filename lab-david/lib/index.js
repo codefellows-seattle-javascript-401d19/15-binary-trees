@@ -12,6 +12,7 @@ BinaryTree.prototype.find = function(value) {
   if(this.value === value) {
     return this;
   }
+
   if(this.value === null)
     return null;
 
@@ -28,26 +29,25 @@ BinaryTree.prototype.find = function(value) {
 };
 
 // iterate over all nodes using pre-order traversal and concatenate their values separated by newlines into a string
-BinaryTree.prototype.stringPreOrder = function(str) {
+BinaryTree.prototype.toString = function(str) {
   // if(typeof str !== 'string')
   //   throw new TypeError('argument <string> must be an string');
   // dont think this is necessary ^^ 
 
-  str = '';
-
-  if(this === null)
-    return null;
-
-  console.log(this);
-
-  str = str.concat(this.value, str); 
-
-  if(this.left.str) {
-    this.left.stringPreOrder(str); 
+  if(!str){
+    str = `${this.value}`;
+  } else {
+    str += `\n${this.value}`;
   }
 
-  if(this.left.str) {
-    this.right.stringPreOrder(str);
+  // str = str + this.value; 
+
+  if(this.left) {
+    str = this.left.toString(str); 
+  }
+
+  if(this.right) {
+    str = this.right.toString(str);
   }
 
   return str;
@@ -55,17 +55,29 @@ BinaryTree.prototype.stringPreOrder = function(str) {
 };
 
 // should use post-order traversal push all tree elements into an array
-BinaryTree.prototype.ArrayifyPreOrder = function(array) {
+BinaryTree.prototype.toArray = function(array) {
   // if(!Array.isArray(array))
   //   throw new TypeError('argument <array> must be an array');
 
-  array = [];
+  if(!array){
+    array = `${this.value}`;
+  } else {
+    array.push(this.value);
+  }
 
-  BinaryTree.ArrayifyPreOrder(this.left);
-  BinaryTree.ArrayifyPreOrder(this.right);
-  BinaryTree.ArrayifyPreOrder(this.value);
+  if(this.left){
+    this.left.toArray(array);
+  }
 
-  array.push(this);
+  if(this.right){
+    this.right.toArray(array);
+  }
+
+  if(this.value){
+    this.value.toArray(array);
+  }
+
+  // array.push(this.value);
 
   return array;
 };  
@@ -89,5 +101,7 @@ two.left = four;
 two.right = five;
 
 three.right = six;
+
+BinaryTree.prototype.toString(one);
 
 module.exports = BinaryTree;
