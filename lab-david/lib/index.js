@@ -28,34 +28,42 @@ BinaryTree.prototype.find = function(value) {
 };
 
 // iterate over all nodes using pre-order traversal and concatenate their values separated by newlines into a string
-BinaryTree.prototype.toString = function(str) {
+BinaryTree.prototype.stringPreOrder = function(str) {
   // if(typeof str !== 'string')
   //   throw new TypeError('argument <string> must be an string');
+  // dont think this is necessary ^^ 
 
   str = '';
 
   if(this === null)
     return null;
 
-  console.log(str);
+  console.log(this);
+
   str = str.concat(this.value, str); 
-  console.log(str);
-  BinaryTree.toString(this.left); //refactor to this.left.toString() ??
-  BinaryTree.toString(this.right);
+
+  if(this.left.str) {
+    this.left.stringPreOrder(str); 
+  }
+
+  if(this.left.str) {
+    this.right.stringPreOrder(str);
+  }
+
   return str;
 
 };
 
 // should use post-order traversal push all tree elements into an array
-BinaryTree.prototype.toArray = function(array) {
-  if(!Array.isArray(array))
-    throw new TypeError('argument <array> must be an array');
+BinaryTree.prototype.ArrayifyPreOrder = function(array) {
+  // if(!Array.isArray(array))
+  //   throw new TypeError('argument <array> must be an array');
 
   array = [];
 
-  BinaryTree.toArray(this.left);
-  BinaryTree.toArray(this.right);
-  BinaryTree.toArray(this.value);
+  BinaryTree.ArrayifyPreOrder(this.left);
+  BinaryTree.ArrayifyPreOrder(this.right);
+  BinaryTree.ArrayifyPreOrder(this.value);
 
   array.push(this);
 
