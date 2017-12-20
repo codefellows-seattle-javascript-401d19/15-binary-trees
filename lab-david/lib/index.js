@@ -9,23 +9,20 @@ const BinaryTree = function(value) {
   // methods on the constructor
   // iterate over all child nodes using an in-order traversal and return first node with the value, return null if not found
 BinaryTree.prototype.find = function(value) {
-  if(this.value === value) {
-    return this;
+  let foundNode = null;
+
+  if(this.left) {
+    foundNode = this.left.find(value);
   }
 
-  if(this.value === null)
-    return null;
-
-  if(this.left.value) {
-    this.left.find(value);
+  if(this.value === value && !foundNode) {
+    foundNode = this;
+  }
+  if(this.right && !foundNode) {
+    foundNode = this.right.find(value);
   }
   
-  if(this.right.value) {
-    this.right.find(value);
-  }
-
-  else
-    return null;
+  return foundNode;
 };
 
 // iterate over all nodes using pre-order traversal and concatenate their values separated by newlines into a string
