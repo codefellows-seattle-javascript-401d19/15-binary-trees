@@ -1,0 +1,19 @@
+{
+  "name": "lab-david",
+  "version": "1.0.0",
+  "description": "![cf](https://i.imgur.com/7v5ASc8.png) Lab 13: Express and Mongo two resource RESTful API ======",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest -i --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^4.13.1",
+    "jest": "^21.2.1"
+  }
+}
