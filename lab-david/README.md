@@ -28,7 +28,13 @@ The constructor should create new binary trees and the prototype methods should 
 - run `npm test` to run tests
 
 ## Tests
-Test should make sure each traversal and prototype is working correctly. 
+Test should test the following: 
+- find prototype should iterate over all the child nodes using 'in-order' traversal and return the first node value that has a value
+- find prototype should iterate over all the child nodes using 'in-order' traversal and return null if a node with a value is not found | edge case
+- toString prototype should iterate over all the child nodes using 'pre-order' traversal and concatenate their values into a string separated by newlines
+- toString prototype should iterate over all the child nodes using 'pre-order' traversal and return null if not given a thing | edge case
+- toArray method should iterate over all the child nodes using 'post-order' traversal and push all the trees elements into an array (1ms)
+- toArray method should iterate over all the child nodes using 'post-order' traversal and push all the trees elements into an array | edge case
 
 ## Contribute
 If anyone wants to help, feel free to open a pull request and send it over. PRs will be answered in the order they are received. 
