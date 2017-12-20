@@ -46,7 +46,7 @@ describe('binary tree - lib/index.js', () => {
 
   // test toArray method
   test(`toArray method should iterate over all the child nodes using 'post-order' traversal and push all the trees elements into an array`, () => {
-    expect(one.toArray([1])).toEqual(`[4, 2, 5, 1, 3, 6]`);
+    expect(one.toArray([])).toEqual([4, 5, 2, 6, 3, 1]);
   });
 });
 

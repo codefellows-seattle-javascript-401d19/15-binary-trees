@@ -40,8 +40,6 @@ BinaryTree.prototype.toString = function(str) {
     str += `\n${this.value}`;
   }
 
-  // str = str + this.value; 
-
   if(this.left) {
     str = this.left.toString(str); 
   }
@@ -59,25 +57,26 @@ BinaryTree.prototype.toArray = function(array) {
   // if(!Array.isArray(array))
   //   throw new TypeError('argument <array> must be an array');
 
-  if(!array){
-    array = `${this.value}`;
-  } else {
-    array.push(this.value);
-  }
+  if(array === null)
+    return;
 
   if(this.left){
-    this.left.toArray(array);
+    array = this.left.toArray(array);
   }
 
   if(this.right){
-    this.right.toArray(array);
+    array = this.right.toArray(array);
   }
 
-  if(this.value){
-    this.value.toArray(array);
+  if(this.root){
+    return array = this.root.toArray(array);
   }
 
-  // array.push(this.value);
+  if(!array){
+    array = `[${this.value}]`;
+  } else {
+    array.push(this.value);
+  }
 
   return array;
 };  
